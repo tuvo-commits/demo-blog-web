@@ -23,17 +23,17 @@ button{font-family:inherit;cursor:pointer}
 #demo h2{font-size:12px;font-weight:600;color:#9da1a7;margin:22px 0 8px}
 #logos{display:grid;gap:8px}
 #logos button{display:flex;align-items:center;gap:10px;width:100%;border:1.5px solid #3a3d42;background:#222427;color:#e6e8eb;border-radius:12px;padding:7px 12px 7px 7px;font-size:13px;text-align:left;line-height:1.3}
-#logos button[aria-pressed="true"],#palettes button[aria-pressed="true"]{border-color:#ffd24a;background:#2f2c1c}
+#logos button[aria-pressed="true"],#palettes button[aria-pressed="true"],#newPalettes button[aria-pressed="true"]{border-color:#ffd24a;background:#2f2c1c}
 #logos .ico{width:44px;height:44px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;flex:none}
 #logos .ico svg{width:36px;height:36px}
-#logos small,#palettes small{display:block;color:#9da1a7;font-size:11.5px;margin-top:1px}
+#logos small,#palettes small,#newPalettes small{display:block;color:#9da1a7;font-size:11.5px;margin-top:1px}
 #lpv{display:grid;gap:8px;margin-top:10px}
 #lpv .pv{border-radius:12px;padding:14px 16px}
 #lpv .pv.l{background:#fff;color:#222;border:1px solid #3a3d42}
 #lpv .pv.d{color:#fff}
 #lpv .lg svg{width:44px;height:44px}
-#palettes{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-#palettes button{width:100%;border:1.5px solid #3a3d42;background:#222427;color:#e6e8eb;border-radius:12px;padding:9px 10px 9px;font-size:12px;text-align:left;line-height:1.3}
+#palettes,#newPalettes{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#palettes button,#newPalettes button{width:100%;border:1.5px solid #3a3d42;background:#222427;color:#e6e8eb;border-radius:12px;padding:9px 10px 9px;font-size:12px;text-align:left;line-height:1.3}
 .dots{display:flex;margin-bottom:8px;padding-left:6px}
 .dots i{width:20px;height:20px;border-radius:50%;border:2px solid #222427;margin-left:-6px;display:block;box-shadow:0 0 0 1px rgba(255,255,255,.18)}
 #cr{margin-top:12px;font-size:12px;color:#c9ccd1;line-height:1.5}
@@ -57,9 +57,9 @@ button{font-family:inherit;cursor:pointer}
 #demo{background:#202a29;box-shadow:-8px 0 28px rgba(20,50,42,.10)}
 #demo h1{font-size:18px;letter-spacing:-.025em}
 #demo h2{color:#dcebe2;font-size:12px;margin-top:24px}
-#palettes,#yellowPalettes{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-#palettes button,#yellowPalettes button{background:#2c3835;border-color:#42514a;border-radius:14px;padding:12px 10px;min-height:82px;color:#fff}
-#palettes button[aria-pressed="true"],#yellowPalettes button[aria-pressed="true"]{background:#3e4938;border-color:#ffd77d;box-shadow:0 0 0 1px #ffd77d}
+#palettes,#yellowPalettes,#newPalettes{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+#palettes button,#yellowPalettes button,#newPalettes button{background:#2c3835;border-color:#42514a;border-radius:14px;padding:12px 10px;min-height:82px;color:#fff}
+#palettes button[aria-pressed="true"],#yellowPalettes button[aria-pressed="true"],#newPalettes button[aria-pressed="true"]{background:#3e4938;border-color:#ffd77d;box-shadow:0 0 0 1px #ffd77d}
 #demo .sub{font-size:12px;line-height:1.7}
 .logo-identity{display:flex;gap:12px;align-items:center;background:#2c3835;padding:12px;border-radius:16px;color:white}
 .logo-identity .ico{height:64px;width:64px;border-radius:14px;background:#fff;display:grid;place-items:center;flex:none}
@@ -75,7 +75,7 @@ button{font-family:inherit;cursor:pointer}
 #site .art p{font-size:16px;line-height:1.9}
 #site .art{max-width:72ch}
 #site .meta,#site .tc p{font-size:13px}
-@media(max-width:860px){#palettes,#yellowPalettes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:860px){#palettes,#yellowPalettes,#newPalettes{grid-template-columns:repeat(2,minmax(0,1fr))}}
 /* ===== Website ===== */
 #site{container-type:inline-size;background:#fff;color:var(--body);max-width:1440px;margin:0 auto;font-size:15px;line-height:1.6}
 #site *{transition:background-color .35s,color .35s,border-color .35s}
@@ -289,6 +289,18 @@ footer.ft .wrap{padding-top:48px;padding-bottom:24px}
 .s3 h4{font-size:14.5px;color:var(--heading);margin-bottom:6px}
 .s3 p{font-size:12px;margin-bottom:14px}
 
+/* Bổ sung cho bài viết: chú thích nguồn, hộp lưu ý, liên kết, tài liệu tham khảo */
+.art sup{font-size:.7em;font-weight:600;color:var(--label);margin-left:2px;line-height:0}
+.art .callout{border:1px solid var(--line);background:var(--soft);border-radius:12px;padding:14px 18px;max-width:640px;margin-bottom:14px;font-size:14px;line-height:1.75}
+.art .callout b{color:var(--heading)}
+.art ul.q b{color:var(--heading);font-weight:600}
+.art .links{display:grid;gap:10px;max-width:640px;margin-bottom:14px}
+.art .links a{display:flex;justify-content:space-between;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 16px;font-size:13.5px;font-weight:500;color:var(--heading);text-decoration:none}
+.art .links a small{display:block;font-size:11.5px;font-weight:400;color:var(--body);word-break:break-all}
+.art ol.refs{padding-left:24px;display:grid;gap:10px;max-width:640px;margin-bottom:14px;font-size:13px;line-height:1.65;color:var(--body)}
+.art ol.refs li{padding-left:4px;overflow-wrap:anywhere}
+.art .disc2{max-width:640px;margin-top:28px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;line-height:1.7;color:var(--body)}
+
 @container (max-width:900px){
  .hero .wrap,.reg,.feat .wrap,.fam .wrap,.alone .box,.band .wrap{grid-template-columns:1fr}
  .tg{grid-template-columns:repeat(2,1fr)}
@@ -463,17 +475,17 @@ footer.ft .wrap{padding-top:48px;padding-bottom:24px}
 
   <!-- ===================== TRANG BÀI VIẾT ===================== -->
   <div id="pArt" hidden>
-    <div class="wrap crumb">Trang chủ › Hiểu về ung thư › <b>Chẩn đoán</b></div>
+    <div class="wrap crumb">Trang chủ › Sống cùng ung thư › <b>Sức khỏe tinh thần</b></div>
     <section class="band"><div class="wrap">
       <div>
-        <span class="lbl">Chẩn đoán</span>
-        <h1 class="serif">Giải phẫu bệnh là gì và vì sao kết quả này quan trọng?</h1>
-        <p class="sp">Kết quả giải phẫu bệnh giúp xác định loại ung thư và đặc điểm của khối u. Bài viết giải thích cách đọc báo cáo và những câu hỏi nên trao đổi với bác sĩ.</p>
-        <div class="mt"><span>Biên soạn: <b>Đội ngũ biên tập</b></span><span>Cập nhật: <b>12/10/2026</b></span><span>6 phút đọc</span></div>
+        <span class="lbl">Sống cùng ung thư</span>
+        <h1 class="serif">“Tôi tưởng chỉ cần khỏe lại là xong.” Sức khỏe tinh thần khi sống cùng ung thư máu</h1>
+        <p class="sp">Lo âu, buồn bã và sợ tái phát là những cảm xúc rất thường gặp ở người bệnh ung thư máu. Bài viết tóm tắt các nghiên cứu tại Úc và gợi ý những việc bạn có thể làm ngay hôm nay.</p>
+        <div class="mt"><span>Biên soạn: <b>Đội ngũ biên tập</b></span><span>Cập nhật: <b>20/10/2026</b></span><span>7 phút đọc</span></div>
       </div>
       <aside class="rev">
         <span class="l2">CẤP 2</span>
-        <div class="rw"><div class="av">BS</div><div><b>Thẩm định y khoa: BS. [Tên reviewer]</b><small>Chuyên khoa [ví dụ: Giải phẫu bệnh] · [Cơ sở]</small></div></div>
+        <div class="rw"><div class="av">BS</div><div><b>Thẩm định y khoa: BS. [Tên reviewer]</b><small>Chuyên khoa [ví dụ: Huyết học] · [Cơ sở]</small></div></div>
         <div class="nc">Không có xung đột lợi ích cần công bố.</div>
       </aside>
     </div></section>
@@ -481,33 +493,82 @@ footer.ft .wrap{padding-top:48px;padding-bottom:24px}
     <div class="wrap body3">
       <nav class="toc" aria-label="Mục lục">
         <span class="lbl">Trong bài này</span>
-        <a href="#s1" class="on">Giải phẫu bệnh là gì?</a><a href="#s2">Vì sao kết quả này quan trọng?</a><a href="#s3">Cách đọc báo cáo giải phẫu bệnh</a><a href="#s4">Những thuật ngữ thường gặp</a><a href="#s5">Câu hỏi nên hỏi bác sĩ</a><a href="#s6">Nguồn tham khảo</a>
+        <a href="#s1" class="on">Bạn không “yếu đuối”</a>
+        <a href="#s2">Nhu cầu chưa được đáp ứng</a>
+        <a href="#s3">Chăm sóc tinh thần không phải “phần phụ”</a>
+        <a href="#s4">Những điều bạn có thể làm hôm nay</a>
+        <a href="#s5">Lời cuối</a>
+        <a href="#s6">Tìm hiểu thêm</a>
+        <a href="#s7">Tài liệu tham khảo</a>
         <div class="act"><span>Lưu</span><span>Chia sẻ</span><span>In</span></div>
       </nav>
+
       <article class="art">
         <div class="cv"><i></i><i></i></div>
         <div class="key"><span class="lbl">Điểm chính</span><ul>
-          <li>Giải phẫu bệnh là kết quả khảo sát mô, giúp xác định loại và đặc điểm của ung thư.</li>
-          <li>Báo cáo này là cơ sở để bác sĩ đánh giá giai đoạn và bàn về các lựa chọn điều trị.</li>
-          <li>Bạn có quyền xin bản sao báo cáo và nhờ bác sĩ giải thích từng mục.</li></ul></div>
-        <h2 id="s1" class="serif">Giải phẫu bệnh là gì?</h2>
-        <p>Giải phẫu bệnh là chuyên ngành y khoa khảo sát mô hoặc tế bào lấy từ cơ thể bằng sinh thiết hoặc phẫu thuật. Bác sĩ giải phẫu bệnh quan sát mẫu dưới kính hiển vi để xác định mẫu đó có tế bào ung thư hay không, và nếu có thì thuộc loại nào.</p>
-        <h2 id="s2" class="serif">Vì sao kết quả này quan trọng?</h2>
-        <p>Kết quả giải phẫu bệnh thường là căn cứ để chẩn đoán xác định. Từ đó, nhóm điều trị cân nhắc các bước tiếp theo như xét nghiệm bổ sung, đánh giá giai đoạn và lựa chọn phương pháp điều trị phù hợp.</p>
-        <h2 id="s3" class="serif">Cách đọc báo cáo giải phẫu bệnh</h2>
-        <p>Một báo cáo thường gồm mô tả mẫu, kết luận chẩn đoán và một số thông tin bổ sung. Bạn không cần tự diễn giải mọi chi tiết; hãy đánh dấu những mục chưa hiểu và hỏi bác sĩ điều trị trong buổi hẹn tiếp theo.</p>
-        <h2 id="s4" class="serif">Những thuật ngữ thường gặp</h2>
-        <div class="gl"><div><b>Biên phẫu thuật (margin)</b><span>Rìa mô được cắt quanh khối u, cho biết còn tế bào ung thư ở rìa hay không.</span></div><div><b>Độ biệt hóa (grade)</b><span>Mức độ tế bào ung thư giống hay khác tế bào bình thường.</span></div><div><b>Hạch (lymph node)</b><span>Cho biết ung thư có lan đến hạch hay không.</span></div></div>
-        <h2 id="s5" class="serif">Câu hỏi nên hỏi bác sĩ</h2>
-        <ul class="q"><li>Kết luận chính của báo cáo này là gì, nói bằng ngôn ngữ đơn giản?</li><li>Tôi có cần làm thêm xét nghiệm nào sau kết quả này không?</li><li>Kết quả này ảnh hưởng thế nào đến các lựa chọn điều trị?</li></ul>
-        <h2 id="s6" class="serif">Nguồn tham khảo</h2>
-        <p style="color:var(--body)">Danh sách nguồn tham khảo sẽ được biên tập viên bổ sung trước khi đăng bài.</p>
+          <li>Lo âu, đau khổ, bất định và buồn bã sau chẩn đoán bệnh bạch cầu là điều bình thường, không phải dấu hiệu của sự yếu đuối.</li>
+          <li>Nỗi sợ tái phát không biến mất ngay khi bệnh thuyên giảm.</li>
+          <li>Những nhu cầu chưa được đáp ứng, nhất là về tâm lý, đi kèm với lo âu và trầm cảm về sau. Nói ra và tìm hỗ trợ sớm là một phần của điều trị.</li></ul></div>
+
+        <h2 id="s1" class="serif">Bạn không “yếu đuối”: đây là điều rất thường gặp</h2>
+        <p>Các nghiên cứu tại Úc nói rõ rằng sau chẩn đoán bệnh bạch cầu, việc trải qua lo âu, đau khổ, bất định, buồn bã và bối rối là điều bình thường, trong khi bạn còn phải đưa ra các quyết định điều trị. Các nghiên cứu cho thấy điều đó phổ biến đến mức nào:</p>
+        <ul class="q">
+          <li><b>Năm 2016</b>, nhóm của tác giả Hall khảo sát 1.414 người sống sót sau ung thư máu ở Úc, tuyển từ năm cơ quan đăng ký ung thư của các bang. Khoảng một phần tư người bệnh có mức lo âu cao hơn bình thường, khoảng một phần tư có mức trầm cảm cao hơn bình thường, và gần 1/5 (17%) bị căng thẳng cao hơn bình thường. Nhóm bị gánh nặng tài chính do bệnh dễ gặp nhiều dạng khó khăn tâm lý cùng lúc hơn.<sup>[1]</sup></li>
+          <li><b>Trong thời kỳ đại dịch COVID-19</b>, nhóm của tác giả Zomerdijk khảo sát 394 người bị ung thư máu: 35% có mức đau khổ tâm lý ở ngưỡng lâm sàng, và gần 1/3 (32%) có ít nhất một nhu cầu hỗ trợ chưa được đáp ứng. Trong nhóm đang thuyên giảm (134 người), gần như tất cả (95%) lo sợ bệnh tái phát ở mức lâm sàng.<sup>[2]</sup></li>
+        </ul>
+        <div class="callout"><b>Lưu ý:</b> nghiên cứu thứ hai dựa trên người tình nguyện trả lời khảo sát trực tuyến và diễn ra giữa đại dịch, nên con số có thể không đại diện cho mọi người bệnh. Nhưng thông điệp chung khá rõ: nỗi sợ tái phát không biến mất ngay khi bệnh thuyên giảm.</div>
+
+        <h2 id="s2" class="serif">Nhu cầu chưa được đáp ứng có thể kéo dài nỗi lo</h2>
+        <p>Một nghiên cứu theo dõi dọc tại bang Victoria (Úc) trên người bệnh u lympho tế bào B lớn lan tỏa và đa u tủy đã phỏng vấn họ khoảng 7 tháng và 15 tháng sau chẩn đoán. Kết quả: những nhu cầu chưa được đáp ứng, nhất là nhu cầu về tâm lý, đi kèm với lo âu và trầm cảm ở thời điểm sau, và có thể kéo dài sang giai đoạn đầu sau điều trị. Các tác giả kết luận rằng giải quyết những nhu cầu này ngay trong lúc điều trị có thể giảm nguy cơ lo âu, trầm cảm về sau.<sup>[3]</sup></p>
+        <p>Nói đơn giản: nếu bạn thấy mình cần được lắng nghe, được giải đáp, được giúp đỡ về tiền bạc hay giấy tờ, đó không phải chuyện phiền hà. Đó là điều có thể ảnh hưởng đến cả quãng đường phía trước của bạn.</p>
+
+        <h2 id="s3" class="serif">Chăm sóc tinh thần không phải là “phần phụ”</h2>
+        <p>Một tổng quan hệ thống và phân tích gộp công bố năm 2025 trên tạp chí BMC Cancer đã xem xét 29 nghiên cứu với hơn 419.000 bệnh nhân ung thư huyết học. Kết quả: trầm cảm có liên quan đến thời gian sống toàn bộ ngắn hơn (HR = 1,17; KTC 95%: 1,09–1,27).<sup>[4]</sup></p>
+        <p>Cần đọc con số này cẩn thận:</p>
+        <ul class="q">
+          <li>Đây là mối liên quan, chưa chứng minh trầm cảm gây ra kết quả xấu hơn.</li>
+          <li>Với lo âu, mối liên quan với thời gian sống không đạt ý nghĩa thống kê, nhưng có liên quan đến thời gian sống không biến cố.</li>
+          <li>Các tác giả ghi nhận có sai lệch công bố, và khi hiệu chỉnh thì mối liên quan yếu đi.</li>
+        </ul>
+        <p>Dù vậy, các tác giả nhấn mạnh việc đánh giá tâm lý và can thiệp sớm là quan trọng ở nhóm bệnh nhân này. Ý nghĩa thực tế rất rõ: nếu bạn thấy mình buồn kéo dài hay không thể ngừng lo âu, hãy nói với bác sĩ. Đó là một phần của việc chăm sóc bạn, không phải điều gì đáng xấu hổ.</p>
+
+        <h2 id="s4" class="serif">Những điều bạn có thể làm hôm nay</h2>
+        <ul class="q">
+          <li><b>Nói ra với người điều trị cho bạn.</b> Hãy kể cả những điều không liên quan đến xét nghiệm: giấc ngủ, nỗi sợ, cảm giác trống rỗng.</li>
+          <li><b>Gọi cho một đường dây hỗ trợ.</b> Ở Úc, Cancer Council có đường dây 13 11 20 miễn phí, bảo mật, để được lắng nghe và hỗ trợ về cảm xúc lẫn thực tế.</li>
+          <li><b>Tìm sự giúp đỡ về chi phí và đi lại.</b> Gánh nặng tài chính liên quan đến căng thẳng tâm lý cao hơn, nên đừng xem đây là chuyện nhỏ.<sup>[1]</sup></li>
+          <li><b>Tìm người đồng hành.</b> Cộng đồng trực tuyến và nhóm hỗ trợ cho người từng trải qua điều tương tự có thể giúp bạn thấy mình không đơn độc.</li>
+        </ul>
+
+        <h2 id="s5" class="serif">Lời cuối</h2>
+        <p>Chị Lan không “vượt qua” nỗi sợ trong một đêm. Chị học cách mang nó theo, cùng với những người sẵn sàng đi cùng chị. Nếu bạn đang ngồi trong chiếc xe của riêng mình, bạn không cần có câu trả lời ngay. Bạn chỉ cần biết rằng bạn không đơn độc, và những gì bạn cảm thấy đã được rất nhiều người từng trải qua.</p>
+
+        <h2 id="s6" class="serif">Tìm hiểu thêm từ Cancer Council Australia</h2>
+        <p>Các trang dưới đây bằng tiếng Anh.</p>
+        <div class="links">
+          <a href="https://www.cancer.org.au/types-of-cancer/leukaemia" target="_blank" rel="noopener"><span>Bệnh bạch cầu (Leukaemia)<small>cancer.org.au/types-of-cancer/leukaemia</small></span><span>→</span></a>
+          <a href="https://www.cancer.org.au/cancer-information/living-and-coping-with-cancer" target="_blank" rel="noopener"><span>Sống chung và đối mặt với ung thư<small>cancer.org.au/cancer-information/living-and-coping-with-cancer</small></span><span>→</span></a>
+          <a href="https://www.cancer.org.au/support-and-services" target="_blank" rel="noopener"><span>Hỗ trợ và dịch vụ<small>cancer.org.au/support-and-services</small></span><span>→</span></a>
+          <a href="https://www.cancer.org.au/support-and-services/multilingual-resources" target="_blank" rel="noopener"><span>Tài liệu đa ngôn ngữ<small>cancer.org.au/support-and-services/multilingual-resources</small></span><span>→</span></a>
+        </div>
+
+        <h2 id="s7" class="serif">Tài liệu tham khảo</h2>
+        <ol class="refs">
+          <li>Hall AE, Sanson-Fisher RW, Carey ML, et al. Prevalence and associates of psychological distress in haematological cancer survivors. <i>Support Care Cancer</i>. 2016. doi:10.1007/s00520-016-3282-3</li>
+          <li>Zomerdijk N, Jongenelis M, Short CE, et al. Prevalence and correlates of psychological distress, unmet supportive care needs, and fear of cancer recurrence among haematological cancer patients during the COVID-19 pandemic. <i>Support Care Cancer</i>. 2021. doi:10.1007/s00520-021-06369-5</li>
+          <li>Oberoi D, White VM, Seymour JF, et al. The influence of unmet supportive care needs on anxiety and depression during cancer treatment and beyond: a longitudinal study of survivors of haematological cancers. <i>Support Care Cancer</i>. 2017. doi:10.1007/s00520-017-3766-9</li>
+          <li>Salabat D, Toutounchian S, Salabat D, et al. The impact of anxiety and depression on hematologic malignancy outcomes: a systematic review and meta-analysis. <i>BMC Cancer</i>. 2025. doi:10.1186/s12885-025-15161-1</li>
+          <li>Cancer Council Australia. Leukaemia. <a href="https://www.cancer.org.au/types-of-cancer/leukaemia" target="_blank" rel="noopener" style="color:var(--heading)">https://www.cancer.org.au/types-of-cancer/leukaemia</a></li>
+        </ol>
+
+        <p class="disc2">Bài viết chỉ mang tính cung cấp thông tin, không thay thế tư vấn y khoa. Nếu bạn đang cảm thấy quá tải, hãy liên hệ bác sĩ hoặc dịch vụ hỗ trợ sức khỏe tâm thần tại nơi bạn sống.</p>
       </article>
+
       <aside class="side">
         <div class="s1"><span class="lbl">Bắt đầu từ đây</span><h4 class="serif">Tôi vừa được chẩn đoán ung thư</h4><p>Việc nên làm đầu tiên là hiểu chẩn đoán và chuẩn bị cho buổi gặp bác sĩ.</p><a class="btn btn-ctad" href="#" onclick="return false" style="padding:9px 18px">Xem hướng dẫn →</a></div>
         <div class="s2"><span class="lbl">Bài liên quan</span>
-          <a href="#" onclick="return false"><b>Giai đoạn bệnh nghĩa là gì? Cách hiểu hệ thống T, N, M</b><small>Giai đoạn · 8 phút đọc</small></a>
-          <a href="#" onclick="return false"><b>Biomarker là gì và khi nào cần xét nghiệm?</b><small>Biomarker · 7 phút đọc</small></a>
+          <a href="#" onclick="return false"><b>Người chăm sóc cũng cần được chăm sóc: nhận biết kiệt sức</b><small>Dành cho người thân · 7 phút đọc</small></a>
+          <a href="#" onclick="return false"><b>Chuẩn bị gì trước buổi hẹn bác sĩ để bàn về điều trị?</b><small>Điều trị · 5 phút đọc</small></a>
           <a href="#" onclick="return false"><b>Xin ý kiến bác sĩ thứ hai (second opinion) như thế nào?</b><small>Tìm hỗ trợ · 6 phút đọc</small></a></div>
         <div class="s3"><h4>Có câu hỏi chung về chủ đề này?</h4><p>Gửi câu hỏi cho chuyên mục #HỏiBácSĩ. Chúng tôi không tư vấn điều trị cá nhân.</p><a class="btn btn-dark" href="#" onclick="return false" style="padding:9px 18px">Gửi câu hỏi</a></div>
       </aside>
@@ -530,7 +591,7 @@ footer.ft .wrap{padding-top:48px;padding-bottom:24px}
 
 <aside id="demo" aria-label="Bảng điều khiển demo">
   <h1>OncoHub · Demo logo và bảng phối màu</h1>
-  <p class="sub">Một biểu tượng hoa sen duy nhất, tự phối màu cùng 19 bảng màu (3 tone vàng chủ đạo + 16 tone bổ trợ). Chọn một tone để xem toàn bộ giao diện thay đổi trực tiếp.</p>
+  <p class="sub">Một biểu tượng hoa sen duy nhất, tự phối màu cùng 27 bảng màu (3 tone vàng chủ đạo + 16 tone bổ trợ + 8 tone mới). Chọn một tone để xem toàn bộ giao diện thay đổi trực tiếp.</p>
   <div class="seg" role="group" aria-label="Chọn trang">
     <button id="bHome" aria-pressed="true">Trang chủ</button>
     <button id="bArt" aria-pressed="false">Trang bài viết</button>
@@ -542,6 +603,8 @@ footer.ft .wrap{padding-top:48px;padding-bottom:24px}
   <div id="yellowPalettes" class="palette-section"></div>
   <h2>16 tone phối màu bổ trợ · Dịu mắt và tươi vui</h2>
   <div id="palettes" role="group" aria-label="Chọn bảng phối màu"></div>
+  <h2>8 tone mới thêm · Giữ vàng làm điểm nhấn</h2>
+  <div id="newPalettes" role="group" aria-label="Chọn bảng phối màu mới"></div>
   <h2>Màu đang dùng</h2>
   <div id="pal" aria-live="polite"></div>
   <div id="note" aria-live="polite"></div>
@@ -565,13 +628,6 @@ function lotus9(cA,cB,cC,gap){var items=[-4,-3,-2,-1,0,1,2,3,4].sort(function(a,
 function lotus5(a,b,c,g,sw){return '<g stroke="'+g+'" stroke-width="'+sw+'" stroke-linejoin="round"><path d="'+OUT+'" fill="'+a+'" transform="rotate(-68)"/><path d="'+OUT+'" fill="'+a+'" transform="rotate(68)"/><path d="'+MID+'" fill="'+b+'" transform="rotate(-36)"/><path d="'+MID+'" fill="'+b+'" transform="rotate(36)"/><path d="'+CEN+'" fill="'+c+'"/></g>'}
 function dropG(x,y,sc,fill,gap){return '<g transform="translate('+x+' '+y+') scale('+sc+')"><path d="'+DROP+'" fill="'+fill+'"/><ellipse cx="-12" cy="14" rx="7" ry="11" fill="'+gap+'" opacity=".55" transform="rotate(18 -12 14)"/></g>'}
 
-var LOGOS=[
- {id:'a',name:'Sen mảnh + Hướng dương',sub:'Vòng cung thon dần, 9 cánh'},
- {id:'b',name:'Huy hiệu tròn',sub:'Mặt trời mọc sau hoa sen'},
- {id:'c',name:'Sen mở + Mặt trời',sub:'Hiện đại, có dấu cộng'},
- {id:'d',name:'Biểu tượng ứng dụng',sub:'Ô vuông bo, dùng làm avatar'},
- {id:'e',name:'Sen + Giọt nước',sub:'Chăm sóc và chữa lành'}
-];
 function logoIcon(k,t,dark){
  var W='#FFFFFF',bg=dark?t.dark:W,acc=t.accent,cta=t.cta,fea=dark?mixc(t.feature,W,.4):t.feature,acc2=mixc(acc,W,.45),s='';
  if(k==='a'){
@@ -598,37 +654,20 @@ function logoIcon(k,t,dark){
  return s;
 }
 
-/* ===== Tone màu từng logo ===== */
+/* ===== Tone màu ===== */
 var T={
 '30':{name:'01 · Vàng nắng chuyển cam',sub:'Vàng #FFDA00 → cam nhẹ #FFB629',note:'Giữ vàng #FFDA00 làm chủ đạo, chuyển nhẹ sang cam ấm #FFB629. Chữ đen, nền kem dịu mắt.',dark:'#28231A',dark2:'#403526',feature:'#6A470C',cta:'#FFDA00',ctaText:'#171717',ctaD:'#FFDA00',ctaDText:'#171717',accent:'#FFDA00',label:'#765000',heading:'#221C13',body:'#494239',line:'#EEE1BD',soft:'#FFFCF3',tint:'#FFF1BD',alt:'#FFE49A',r1:'#FFDA00',r2:'#FFCF00',r3:'#FFC21A',r4:'#FFB629',r5:'#FFA92E',badgeA:'#6A470C',badgeB:'#8D590E',cov1:'#FFE579',cov2:'#FFF0BA',cov3:'#FFE0B0'},
 '31':{name:'02 · Vàng cam dịu',sub:'Vàng #FFDA00 → vàng cam #FFC21A',note:'Biến thể vàng cam nhẹ nhàng hơn: vàng #FFDA00 chiếm ưu thế, cam chỉ điểm nhẹ ở cuối dải màu; chữ đen rõ ràng.',dark:'#231E16',dark2:'#3C3021',feature:'#704C14',cta:'#FFDA00',ctaText:'#151515',ctaD:'#FFDA00',ctaDText:'#151515',accent:'#FFCF00',label:'#78510A',heading:'#211C15',body:'#474038',line:'#EDE2C6',soft:'#FFFCF5',tint:'#FFF5CF',alt:'#FFE9AF',r1:'#FFDA00',r2:'#FFD323',r3:'#FFCF00',r4:'#FFC21A',r5:'#FFB629',badgeA:'#704C14',badgeB:'#8D590E',cov1:'#FFEBA3',cov2:'#FFF2CC',cov3:'#FFE4B8'},
-'32':{name:'21 · Tím hồng êm dịu',sub:'Lavender · hồng · trắng kem',note:'Tím và hồng pastel cân bằng, dành cho các khu vực hỗ trợ tinh thần.',dark:'#593E67',dark2:'#73577E',feature:'#84495F',cta:'#FEA837',ctaText:'#222222',ctaD:'#FEA837',ctaDText:'#222222',accent:'#FFD18C',label:'#593E67',heading:'#483550',body:'#5C5361',line:'#EAE0E8',soft:'#FFF9F5',tint:'#F8E9F1',alt:'#EDE2F5',r1:'#593E67',r2:'#84495F',r3:'#B85B56',r4:'#FEA837',badgeA:'#593E67',badgeB:'#84495F',cov1:'#F8E9F1',cov2:'#EDE2F5',cov3:'#FFF0D9'},
 '33':{name:'12 · Vàng nắng và trời xanh',sub:'Vàng sáng · xanh trời · kem',note:'Vàng vui tươi phối xanh trời và kem để nhẹ mắt, phù hợp các mục kiến thức.',dark:'#174A67',dark2:'#266781',feature:'#227C9D',cta:'#FFDF37',ctaText:'#202020',ctaD:'#FFDF37',ctaDText:'#202020',accent:'#FFDF37',label:'#735600',heading:'#174A67',body:'#405667',line:'#DCE8EA',soft:'#FFFCF4',tint:'#FFF6D0',alt:'#E3F5F8',r1:'#62B3E3',r2:'#FFDF37',r3:'#EB9008',r4:'#6F8930',badgeA:'#227C9D',badgeB:'#806000',cov1:'#FFF6D0',cov2:'#E3F5F8',cov3:'#FFE5B8'},
-
- '20':{name:'03 · Nắng vàng biển ngọc dịu mắt',sub:'Vàng nghệ ấm · kem sáng · xanh ngọc nhẹ',note:'Giữ đủ 5 màu gốc #0E6973, #118C8C, #BAD9CE, #F2BB16, #BF820F. Vàng nghệ là nhận diện chính; dùng nền kem gần trắng và chữ xanh than đậm để đọc lâu dễ chịu. Xanh ngọc chỉ làm điểm nhấn nhỏ.',dark:'#164E55',dark2:'#20636A',feature:'#17636A',cta:'#F2BB16',ctaText:'#26210F',ctaD:'#F2BB16',ctaDText:'#26210F',accent:'#F8CF5B',label:'#71500D',heading:'#263D3E',body:'#435456',line:'#E5E8E1',soft:'#FFFCF5',tint:'#FFF5D9',alt:'#F3F8F5',r1:'#0E6973',r2:'#118C8C',r3:'#BAD9CE',r4:'#F2BB16',r5:'#BF820F',badgeA:'#17636A',badgeB:'#82590A',cov1:'#FFF0C1',cov2:'#E8F4F0',cov3:'#F9E8BE'},
- '21':{name:'04 · Vàng rực ngày mới',sub:'Vàng tươi chủ đạo · xanh trời · cam',note:'Giữ nguyên màu ảnh gốc: #62B3E3, #FFDF37, #EB9008, #6F8930. Vàng tươi và vàng kem chiếm phần lớn diện tích; xanh trời, cam, olive dùng làm điểm nhấn.',dark:'#765207',dark2:'#946B0D',feature:'#A97608',cta:'#FFDF37',ctaText:'#221C00',ctaD:'#FFDF37',ctaDText:'#221C00',accent:'#FFDF37',label:'#735000',heading:'#403307',body:'#514A35',line:'#F0E3B7',soft:'#FFFCF0',tint:'#FFF4B0',alt:'#FFEAA2',r1:'#62B3E3',r2:'#FFDF37',r3:'#EB9008',r4:'#6F8930',badgeA:'#946B0D',badgeB:'#6F8930',cov1:'#FFE57A',cov2:'#FFF3B5',cov3:'#DDF2F9'},
-
-'0':{name:'01 · Nắng ấm',sub:'Vàng mật ong · xanh lá',note:'Vàng là màu chủ đạo trên nút, điểm nhấn và mảng thương hiệu; xanh lá, đào và kem chỉ đóng vai trò cân bằng để đọc lâu dễ chịu.',dark:'#B87A0D',dark2:'#375F4A',feature:'#375F4A',cta:'#F5B72E',ctaText:'#392B12',ctaD:'#F5B72E',ctaDText:'#392B12',accent:'#FFE19A',label:'#B87A0D',heading:'#354B3D',body:'#43554B',line:'#E8E1D2',soft:'#FFF9EA',tint:'#FFF0BF',alt:'#FFE0A0',r1:'#F5B72E',r2:'#375F4A',r3:'#D99155',r4:'#9278A5',badgeA:'#B87A0D',badgeB:'#375F4A',cov1:'#FFF0BF',cov2:'#FFE0A0',cov3:'#E4EEDB'},
-'1':{name:'02 · Bình minh',sub:'Vàng đào · xanh xô',note:'Vàng là màu chủ đạo trên nút, điểm nhấn và mảng thương hiệu; xanh lá, đào và kem chỉ đóng vai trò cân bằng để đọc lâu dễ chịu.',dark:'#B87724',dark2:'#517B68',feature:'#517B68',cta:'#F6BD55',ctaText:'#392B12',ctaD:'#F6BD55',ctaDText:'#392B12',accent:'#FFE19A',label:'#B87724',heading:'#354B3D',body:'#43554B',line:'#E8E1D2',soft:'#FFF9EF',tint:'#FFE3A6',alt:'#FFE6C7',r1:'#F6BD55',r2:'#517B68',r3:'#D99155',r4:'#9278A5',badgeA:'#B87724',badgeB:'#517B68',cov1:'#FFE3A6',cov2:'#FFE6C7',cov3:'#E4EEDB'},
-'2':{name:'03 · Sen vàng',sub:'Vàng sen · rêu dịu',note:'Vàng là màu chủ đạo trên nút, điểm nhấn và mảng thương hiệu; xanh lá, đào và kem chỉ đóng vai trò cân bằng để đọc lâu dễ chịu.',dark:'#A86E12',dark2:'#617C4D',feature:'#617C4D',cta:'#F2B533',ctaText:'#392B12',ctaD:'#F2B533',ctaDText:'#392B12',accent:'#FFE19A',label:'#A86E12',heading:'#354B3D',body:'#43554B',line:'#E8E1D2',soft:'#FFFCF0',tint:'#FFE7A1',alt:'#F8E8C5',r1:'#F2B533',r2:'#617C4D',r3:'#D99155',r4:'#9278A5',badgeA:'#A86E12',badgeB:'#617C4D',cov1:'#FFE7A1',cov2:'#F8E8C5',cov3:'#E4EEDB'},
-'3':{name:'04 · Ánh dương',sub:'Vàng cam · xanh ngọc',note:'Vàng là màu chủ đạo trên nút, điểm nhấn và mảng thương hiệu; xanh lá, đào và kem chỉ đóng vai trò cân bằng để đọc lâu dễ chịu.',dark:'#A76814',dark2:'#34776D',feature:'#34776D',cta:'#F3AE49',ctaText:'#392B12',ctaD:'#F3AE49',ctaDText:'#392B12',accent:'#FFE19A',label:'#A76814',heading:'#354B3D',body:'#43554B',line:'#E8E1D2',soft:'#FFF9EF',tint:'#FFE0A8',alt:'#FFE9D4',r1:'#F3AE49',r2:'#34776D',r3:'#D99155',r4:'#9278A5',badgeA:'#A76814',badgeB:'#34776D',cov1:'#FFE0A8',cov2:'#FFE9D4',cov3:'#E4EEDB'},
+'20':{name:'03 · Nắng vàng biển ngọc dịu mắt',sub:'Vàng nghệ ấm · kem sáng · xanh ngọc nhẹ',note:'Giữ đủ 5 màu gốc #0E6973, #118C8C, #BAD9CE, #F2BB16, #BF820F. Vàng nghệ là nhận diện chính; dùng nền kem gần trắng và chữ xanh than đậm để đọc lâu dễ chịu. Xanh ngọc chỉ làm điểm nhấn nhỏ.',dark:'#164E55',dark2:'#20636A',feature:'#17636A',cta:'#F2BB16',ctaText:'#26210F',ctaD:'#F2BB16',ctaDText:'#26210F',accent:'#F8CF5B',label:'#71500D',heading:'#263D3E',body:'#435456',line:'#E5E8E1',soft:'#FFFCF5',tint:'#FFF5D9',alt:'#F3F8F5',r1:'#0E6973',r2:'#118C8C',r3:'#BAD9CE',r4:'#F2BB16',r5:'#BF820F',badgeA:'#17636A',badgeB:'#82590A',cov1:'#FFF0C1',cov2:'#E8F4F0',cov3:'#F9E8BE'},
 '4':{name:'04 · Xanh thiên nhiên',sub:'Lá non · bình yên',note:'Phối nhiều sắc độ dịu mắt, giữ chữ rõ và bố cục thoáng.',dark:'#285C46',dark2:'#42705C',feature:'#3B6F53',cta:'#285C46',ctaText:'#FFFFFF',ctaD:'#A4CAA6',ctaDText:'#285C46',accent:'#A4CAA6',label:'#285C46',heading:'#285C46',body:'#2B5040',line:'#D4DEDA',soft:'#F6FAF5',tint:'#E6F3E8',alt:'#E6F0E6',r1:'#285C46',r2:'#3B6F53',r3:'#4E8161',r4:'#659872',badgeA:'#285C46',badgeB:'#3B6F53',cov1:'#E6F3E8',cov2:'#E6F0E6',cov3:'#D3E7D5'},
 '5':{name:'05 · Xanh biển',sub:'Biển sáng · tin tưởng',note:'Phối nhiều sắc độ dịu mắt, giữ chữ rõ và bố cục thoáng.',dark:'#285B79',dark2:'#426F89',feature:'#376E8F',cta:'#285B79',ctaText:'#FFFFFF',ctaD:'#97CAEE',ctaDText:'#285B79',accent:'#97CAEE',label:'#285B79',heading:'#285B79',body:'#2B4F64',line:'#D4DEE4',soft:'#F5FAFE',tint:'#E2F2FC',alt:'#E2F0FA',r1:'#285B79',r2:'#376E8F',r3:'#4681A5',r4:'#5998C1',badgeA:'#285B79',badgeB:'#376E8F',cov1:'#E2F2FC',cov2:'#E2F0FA',cov3:'#CCE7F8'},
-'6':{name:'07 · Tím hoàng hôn',sub:'Tím mận · cam nắng',note:'Phối màu từ bảng tham khảo bạn gửi; ưu tiên nền sáng, chữ đậm và điểm nhấn ấm áp.',dark:'#593E67',dark2:'#6D5579',feature:'#593E67',cta:'#FEA837',ctaText:'#222A34',ctaD:'#FEA837',ctaDText:'#222A34',accent:'#FECB87',label:'#593E67',heading:'#593E67',body:'#605971',line:'#E1DCE4',soft:'#FFF6EB',tint:'#FFE9CD',alt:'#EAE0E4',r1:'#593E67',r2:'#84495F',r3:'#B85B56',r4:'#DE741C',badgeA:'#593E67',badgeB:'#593E67',cov1:'#FFE9CD',cov2:'#EAE0E4',cov3:'#FFE5C3'},
-'7':{name:'08 · Pastel hy vọng',sub:'Vàng nhạt · hồng · lavender',note:'Phối màu từ bảng tham khảo bạn gửi; ưu tiên nền sáng, chữ đậm và điểm nhấn ấm áp.',dark:'#BFAEE3',dark2:'#C7B8E6',feature:'#BFAEE3',cta:'#FFD273',ctaText:'#222A34',ctaD:'#FFD273',ctaDText:'#222A34',accent:'#FFE4AB',label:'#263548',heading:'#263548',body:'#475462',line:'#F3F0FA',soft:'#FFFAF1',tint:'#FFF4DC',alt:'#FFFBEA',r1:'#FFD273',r2:'#FEE686',r3:'#FCC5E6',r4:'#DEB5D7',badgeA:'#BFAEE3',badgeB:'#BFAEE3',cov1:'#FFF4DC',cov2:'#FFFBEA',cov3:'#ECE7F7'},
 '8':{name:'06 · Biển và san hô',sub:'Xanh biển · san hô',note:'Phối màu từ bảng tham khảo bạn gửi; ưu tiên nền sáng, chữ đậm và điểm nhấn ấm áp.',dark:'#034C5F',dark2:'#216172',feature:'#034C5F',cta:'#EE6457',ctaText:'#FFFFFF',ctaD:'#EE6457',ctaDText:'#FFFFFF',accent:'#F5A29A',label:'#034C5F',heading:'#034C5F',body:'#36606D',line:'#D2DFE2',soft:'#FDF0EE',tint:'#FBD8D5',alt:'#D4E1E4',r1:'#97BEC6',r2:'#034C5F',r3:'#EE6457',r4:'#F9C4BA',badgeA:'#034C5F',badgeB:'#034C5F',cov1:'#FBD8D5',cov2:'#D4E1E4',cov3:'#FEFCFC'},
 '9':{name:'07 · Vàng cát thanh lịch',sub:'Xanh đêm · cát vàng',note:'Phối màu từ bảng tham khảo bạn gửi; ưu tiên nền sáng, chữ đậm và điểm nhấn ấm áp.',dark:'#0B1F3A',dark2:'#283A52',feature:'#0B1F3A',cta:'#FFD66D',ctaText:'#222A34',ctaD:'#FFD66D',ctaDText:'#222A34',accent:'#FFE6A7',label:'#0B1F3A',heading:'#0B1F3A',body:'#3A4A5A',line:'#D3D7DC',soft:'#FFFBF0',tint:'#FFF5DA',alt:'#D7DEE1',r1:'#0B1F3A',r2:'#143A51',r3:'#746C6B',r4:'#C49A68',badgeA:'#0B1F3A',badgeB:'#0B1F3A',cov1:'#FFF5DA',cov2:'#D7DEE1',cov3:'#FFF3D3'},
 '10':{name:'08 · Năng lượng dịu',sub:'Xanh navy · cam đào',note:'Phối màu từ bảng tham khảo bạn gửi; ưu tiên nền sáng, chữ đậm và điểm nhấn ấm áp.',dark:'#1C2743',dark2:'#37415A',feature:'#1C2743',cta:'#FD9564',ctaText:'#222A34',ctaD:'#FD9564',ctaDText:'#222A34',accent:'#FEBFA2',label:'#1C2743',heading:'#1C2743',body:'#424E5F',line:'#D6D8DD',soft:'#FFF4F0',tint:'#FEE4D8',alt:'#D9DDE4',r1:'#1C2743',r2:'#213862',r3:'#B46382',r4:'#FD9564',badgeA:'#1C2743',badgeB:'#1C2743',cov1:'#FEE4D8',cov2:'#D9DDE4',cov3:'#F7C8C5'},
-'11':{name:'09 · Sắc màu tươi sáng',sub:'Xanh ngọc · vàng · hồng',note:'Phối màu từ bảng tham khảo bạn gửi; ưu tiên nền sáng, chữ đậm và điểm nhấn ấm áp.',dark:'#227C9D',dark2:'#3D8CA9',feature:'#227C9D',cta:'#FFCB77',ctaText:'#222A34',ctaD:'#FFCB77',ctaDText:'#222A34',accent:'#FFE0AD',label:'#263548',heading:'#263548',body:'#475462',line:'#D7E7ED',soft:'#FFFAF1',tint:'#FFF2DD',alt:'#D8F5F2',r1:'#227C9D',r2:'#17C3B2',r3:'#FFCB77',r4:'#FEF9EF',badgeA:'#227C9D',badgeB:'#227C9D',cov1:'#FFF2DD',cov2:'#D8F5F2',cov3:'#FFD3D5'},
-'12':{name:'13 · Nắng ấm tích cực',sub:'Vàng kem · xanh dịu',note:'Phối màu từ bảng tham khảo bạn gửi; ưu tiên nền sáng, chữ đậm và điểm nhấn ấm áp.',dark:'#303C6C',dark2:'#49537E',feature:'#303C6C',cta:'#FBE8A6',ctaText:'#222A34',ctaD:'#FBE8A6',ctaDText:'#222A34',accent:'#FDF1CA',label:'#303C6C',heading:'#303C6C',body:'#4C5874',line:'#DADCE5',soft:'#FFFDF6',tint:'#FEF9E9',alt:'#FDEDE6',r1:'#FBE8A6',r2:'#F4976C',r3:'#303C6C',r4:'#B4DFE5',badgeA:'#303C6C',badgeB:'#303C6C',cov1:'#FEF9E9',cov2:'#FDEDE6',cov3:'#F2FEFF'},
 '13':{name:'09 · Cam năng lượng',sub:'Cam sáng · kem · xanh đêm',note:'Phối màu từ bảng tham khảo bạn gửi; ưu tiên nền sáng, chữ đậm và điểm nhấn ấm áp.',dark:'#1B2230',dark2:'#363D49',feature:'#1B2230',cta:'#F28C38',ctaText:'#222A34',ctaD:'#F28C38',ctaDText:'#222A34',accent:'#F7BA88',label:'#1B2230',heading:'#1B2230',body:'#424B56',line:'#D6D7DA',soft:'#FEF4EB',tint:'#FCE2CD',alt:'#FFE6D4',r1:'#F28C38',r2:'#FF6B00',r3:'#FFFAF1',r4:'#1B2230',badgeA:'#1B2230',badgeB:'#1B2230',cov1:'#FCE2CD',cov2:'#FFE6D4',cov3:'#D7CFE8'},
-'14':{name:'15 · Sen chiều ấm áp',sub:'Tím mận · cam đào',note:'Phối màu từ bảng tham khảo bạn gửi; ưu tiên nền sáng, chữ đậm và điểm nhấn ấm áp.',dark:'#593E67',dark2:'#6D5579',feature:'#593E67',cta:'#FEA837',ctaText:'#222A34',ctaD:'#FEA837',ctaDText:'#222A34',accent:'#FECB87',label:'#593E67',heading:'#593E67',body:'#605971',line:'#E1DCE4',soft:'#FFF6EB',tint:'#FFE9CD',alt:'#F3E3E2',r1:'#593E67',r2:'#B85B56',r3:'#FEA837',r4:'#FFF5E9',badgeA:'#593E67',badgeB:'#593E67',cov1:'#FFE9CD',cov2:'#F3E3E2',cov3:'#DAC8CF'},
-'15':{name:'16 · Kẹo bông dịu nhẹ',sub:'Vàng pastel · hồng nhạt',note:'Phối màu từ bảng tham khảo bạn gửi; ưu tiên nền sáng, chữ đậm và điểm nhấn ấm áp.',dark:'#BFAEE3',dark2:'#C7B8E6',feature:'#BFAEE3',cta:'#FFD273',ctaText:'#222A34',ctaD:'#FFD273',ctaDText:'#222A34',accent:'#FFE4AB',label:'#263548',heading:'#263548',body:'#475462',line:'#F3F0FA',soft:'#FFFAF1',tint:'#FFF4DC',alt:'#FEF5FB',r1:'#FEE686',r2:'#FCC5E6',r3:'#BFAEE3',r4:'#FFF9F1',badgeA:'#BFAEE3',badgeB:'#BFAEE3',cov1:'#FFF4DC',cov2:'#FEF5FB',cov3:'#FFF2D5'},
 '16':{name:'10 · Đại dương bình yên',sub:'Xanh biển · hồng san hô',note:'Phối màu từ bảng tham khảo bạn gửi; ưu tiên nền sáng, chữ đậm và điểm nhấn ấm áp.',dark:'#034C5F',dark2:'#216172',feature:'#034C5F',cta:'#F9C4BA',ctaText:'#222A34',ctaD:'#F9C4BA',ctaDText:'#222A34',accent:'#FBDCD6',label:'#034C5F',heading:'#034C5F',body:'#36606D',line:'#D2DFE2',soft:'#FEF9F8',tint:'#FEF0EE',alt:'#EDF4F5',r1:'#034C5F',r2:'#97BEC6',r3:'#F9C4BA',r4:'#FDF5F4',badgeA:'#034C5F',badgeB:'#034C5F',cov1:'#FEF0EE',cov2:'#EDF4F5',cov3:'#FAD0CD'},
 '17':{name:'11 · Bình minh trên cát',sub:'Vàng cát · xanh navy',note:'Phối màu từ bảng tham khảo bạn gửi; ưu tiên nền sáng, chữ đậm và điểm nhấn ấm áp.',dark:'#143A51',dark2:'#305266',feature:'#143A51',cta:'#FFD66D',ctaText:'#222A34',ctaD:'#FFD66D',ctaDText:'#222A34',accent:'#FFE6A7',label:'#143A51',heading:'#143A51',body:'#3E5766',line:'#D5DCE0',soft:'#FFFBF0',tint:'#FFF5DA',alt:'#F5EEE5',r1:'#FFD66D',r2:'#C49A68',r3:'#143A51',r4:'#FFF9ED',badgeA:'#143A51',badgeB:'#143A51',cov1:'#FFF5DA',cov2:'#F5EEE5',cov3:'#D5D3D3'},
-'18':{name:'19 · San hô và nắng',sub:'Cam đào · hồng phấn',note:'Phối màu từ bảng tham khảo bạn gửi; ưu tiên nền sáng, chữ đậm và điểm nhấn ấm áp.',dark:'#1C2743',dark2:'#37415A',feature:'#1C2743',cta:'#FD9564',ctaText:'#222A34',ctaD:'#FD9564',ctaDText:'#222A34',accent:'#FEBFA2',label:'#1C2743',heading:'#1C2743',body:'#424E5F',line:'#D6D8DD',soft:'#FFF4F0',tint:'#FEE4D8',alt:'#F2E4EA',r1:'#FD9564',r2:'#B46382',r3:'#1C2743',r4:'#FFF7F0',badgeA:'#1C2743',badgeB:'#1C2743',cov1:'#FEE4D8',cov2:'#F2E4EA',cov3:'#F7C8C5'},
-'19':{name:'20 · Ngày mới rạng rỡ',sub:'Vàng mật · xanh ngọc',note:'Phối màu từ bảng tham khảo bạn gửi; ưu tiên nền sáng, chữ đậm và điểm nhấn ấm áp.',dark:'#227C9D',dark2:'#3D8CA9',feature:'#227C9D',cta:'#FFCB77',ctaText:'#222A34',ctaD:'#FFCB77',ctaDText:'#222A34',accent:'#FFE0AD',label:'#263548',heading:'#263548',body:'#475462',line:'#D7E7ED',soft:'#FFFAF1',tint:'#FFF2DD',alt:'#D8F5F2',r1:'#FFCB77',r2:'#17C3B2',r3:'#227C9D',r4:'#FEF9EF',badgeA:'#227C9D',badgeB:'#227C9D',cov1:'#FFF2DD',cov2:'#D8F5F2',cov3:'#FFD3D5'},
-
 '34':{name:'Sương mai xanh xô',sub:'Xanh sage · kem sữa · vàng nhạt',note:'Bảng phối dịu mắt: nền gần trắng, chữ đậm, màu tươi chỉ làm điểm nhấn. Ưu tiên đọc bài viết lâu và tương phản rõ.',dark:'#345B50',dark2:'#427364',feature:'#427364',cta:'#F2C66D',ctaText:'#24221E',ctaD:'#F2C66D',ctaDText:'#24221E',accent:'#F2C66D',label:'#345B50',heading:'#23352E',body:'#3F534C',line:'#E1EAE3',soft:'#FBFCF8',tint:'#EAF3EC',alt:'#FFF3D8',r1:'#8EB8A2',r2:'#F2C66D',r3:'#427364',r4:'#F2C66D',badgeA:'#427364',badgeB:'#345B50',cov1:'#CFE3D5',cov2:'#FFF0CB',cov3:'#FFF3D8'},
 '35':{name:'Hồng đào an yên',sub:'Hồng đào · kem · nâu mận',note:'Bảng phối dịu mắt: nền gần trắng, chữ đậm, màu tươi chỉ làm điểm nhấn. Ưu tiên đọc bài viết lâu và tương phản rõ.',dark:'#624A53',dark2:'#805D69',feature:'#805D69',cta:'#F3B49E',ctaText:'#24221E',ctaD:'#F3B49E',ctaDText:'#24221E',accent:'#F3B49E',label:'#624A53',heading:'#2D2429',body:'#55474E',line:'#EEDFE0',soft:'#FFFAF8',tint:'#FCECE7',alt:'#F8E8D9',r1:'#D7A5B6',r2:'#F3B49E',r3:'#805D69',r4:'#F3B49E',badgeA:'#805D69',badgeB:'#624A53',cov1:'#EBC8C9',cov2:'#F9E7DA',cov3:'#F8E8D9'},
 '36':{name:'Lam sương bình yên',sub:'Xanh lam khói · trắng sữa',note:'Bảng phối dịu mắt: nền gần trắng, chữ đậm, màu tươi chỉ làm điểm nhấn. Ưu tiên đọc bài viết lâu và tương phản rõ.',dark:'#294F65',dark2:'#35687C',feature:'#35687C',cta:'#F3C879',ctaText:'#24221E',ctaD:'#F3C879',ctaDText:'#24221E',accent:'#F3C879',label:'#294F65',heading:'#243C49',body:'#415765',line:'#DCE7ED',soft:'#F8FBFD',tint:'#E8F2F6',alt:'#FFF3DB',r1:'#8FB8CC',r2:'#F3C879',r3:'#35687C',r4:'#F3C879',badgeA:'#35687C',badgeB:'#294F65',cov1:'#C9E1EA',cov2:'#FFF1D6',cov3:'#FFF3DB'},
@@ -636,8 +675,19 @@ var T={
 '38':{name:'Trà xanh & mật ong',sub:'Xanh trà · mật ong · kem',note:'Bảng phối dịu mắt: nền gần trắng, chữ đậm, màu tươi chỉ làm điểm nhấn. Ưu tiên đọc bài viết lâu và tương phản rõ.',dark:'#43583D',dark2:'#5C7450',feature:'#5C7450',cta:'#EBC16A',ctaText:'#24221E',ctaD:'#EBC16A',ctaDText:'#24221E',accent:'#EBC16A',label:'#43583D',heading:'#283627',body:'#495443',line:'#E4E9DD',soft:'#FCFCF7',tint:'#F0F4E9',alt:'#FFF3D9',r1:'#A8C49A',r2:'#EBC16A',r3:'#5C7450',r4:'#EBC16A',badgeA:'#5C7450',badgeB:'#43583D',cov1:'#DBE7CE',cov2:'#FFF1CC',cov3:'#FFF3D9'},
 '39':{name:'Biển ngọc & cát mềm',sub:'Ngọc lam trầm · be cát',note:'Bảng phối dịu mắt: nền gần trắng, chữ đậm, màu tươi chỉ làm điểm nhấn. Ưu tiên đọc bài viết lâu và tương phản rõ.',dark:'#24575B',dark2:'#337278',feature:'#337278',cta:'#EEC995',ctaText:'#24221E',ctaD:'#EEC995',ctaDText:'#24221E',accent:'#EEC995',label:'#24575B',heading:'#263F41',body:'#456063',line:'#DDE9E7',soft:'#FAFCFA',tint:'#E8F5F2',alt:'#FAF0DF',r1:'#8EC8BF',r2:'#EEC995',r3:'#337278',r4:'#EEC995',badgeA:'#337278',badgeB:'#24575B',cov1:'#D0EAE4',cov2:'#F8EBD5',cov3:'#FAF0DF'},
 '40':{name:'Bình minh hoa mơ',sub:'Vàng mơ · hồng phấn · kem',note:'Bảng phối dịu mắt: nền gần trắng, chữ đậm, màu tươi chỉ làm điểm nhấn. Ưu tiên đọc bài viết lâu và tương phản rõ.',dark:'#624F43',dark2:'#87634C',feature:'#87634C',cta:'#F4C66B',ctaText:'#24221E',ctaD:'#F4C66B',ctaDText:'#24221E',accent:'#F4C66B',label:'#624F43',heading:'#332D27',body:'#594D45',line:'#EEE5D9',soft:'#FFFCF7',tint:'#FFF2D9',alt:'#FBE9E8',r1:'#EAB5AD',r2:'#F4C66B',r3:'#87634C',r4:'#F4C66B',badgeA:'#87634C',badgeB:'#624F43',cov1:'#F7E2C6',cov2:'#F9E8E6',cov3:'#FBE9E8'},
+
+/* ===== 8 tone mới: vàng làm điểm nhấn, nền kem, chữ đậm để đọc lâu ===== */
+'41':{name:'Mật ong & xanh rêu',sub:'Rêu ấm · mật ong · kem lúa',note:'Rêu xanh trầm làm nền đậm, mật ong #F3BE3E làm điểm nhấn. Hợp nội dung sống cùng bệnh và chăm sóc dài hạn.',dark:'#3B4A2F',dark2:'#51643F',feature:'#55703F',cta:'#F3BE3E',ctaText:'#25200F',ctaD:'#F3BE3E',ctaDText:'#25200F',accent:'#F3BE3E',label:'#4A5A24',heading:'#263220',body:'#444F3A',line:'#E6E8D6',soft:'#FFFDF4',tint:'#F6F4D8',alt:'#EFF3DE',r1:'#A9BE72',r2:'#F3BE3E',r3:'#55703F',r4:'#D99A3B',badgeA:'#55703F',badgeB:'#3B4A2F',cov1:'#E6EDC3',cov2:'#FFF0C4',cov3:'#F2F5DF'},
+'42':{name:'Xanh dương tin cậy & vàng chanh',sub:'Xanh cobalt dịu · vàng chanh · trắng lạnh',note:'Xanh dương tạo cảm giác y khoa, đáng tin; vàng chanh #FFD94A giữ vai trò nút chính và điểm nhấn.',dark:'#1F3F66',dark2:'#2C5683',feature:'#2B5C93',cta:'#FFD94A',ctaText:'#1C1A0C',ctaD:'#FFD94A',ctaDText:'#1C1A0C',accent:'#FFD94A',label:'#234A78',heading:'#1C3555',body:'#3E536B',line:'#DCE6F0',soft:'#FAFCFF',tint:'#E7F0FA',alt:'#FFF6D2',r1:'#7FAEDC',r2:'#FFD94A',r3:'#2B5C93',r4:'#F2A93B',badgeA:'#2B5C93',badgeB:'#1F3F66',cov1:'#CFE2F5',cov2:'#FFF1BA',cov3:'#E7F0FA'},
+'43':{name:'Cam đất & kem sữa',sub:'Nâu đất · cam hổ phách · kem',note:'Tông đất ấm áp, gần gũi, ít chói mắt. Cam hổ phách #F0A04B cho nút và điểm nhấn.',dark:'#5A3A24',dark2:'#744A2E',feature:'#8A5232',cta:'#F0A04B',ctaText:'#2A1A0C',ctaD:'#F0A04B',ctaDText:'#2A1A0C',accent:'#F6C17B',label:'#7A4524',heading:'#3A271A',body:'#5A4A3F',line:'#EFE2D5',soft:'#FFFAF4',tint:'#FBE9D6',alt:'#F6EBDD',r1:'#E7B48A',r2:'#F0A04B',r3:'#8A5232',r4:'#C9805A',badgeA:'#8A5232',badgeB:'#5A3A24',cov1:'#F7D9BC',cov2:'#FFF0DC',cov3:'#F3E4D4'},
+'44':{name:'Mint tươi & vàng bơ',sub:'Xanh mint trầm · vàng bơ · trắng xanh',note:'Mint trầm dịu mắt, vàng bơ #F5D36B làm điểm nhấn. Phù hợp khu vực tin tức và kiến thức hằng tuần.',dark:'#1F5A52',dark2:'#2B7268',feature:'#2B7268',cta:'#F5D36B',ctaText:'#24210F',ctaD:'#F5D36B',ctaDText:'#24210F',accent:'#F5D36B',label:'#1F5A52',heading:'#1E3D39',body:'#3E5B57',line:'#D9EBE7',soft:'#F8FDFB',tint:'#E3F5F0',alt:'#FFF6D8',r1:'#8ED4C4',r2:'#F5D36B',r3:'#2B7268',r4:'#F2B66B',badgeA:'#2B7268',badgeB:'#1F5A52',cov1:'#C9ECE3',cov2:'#FFF1C4',cov3:'#E3F5F0'},
+'45':{name:'Hồng cánh sen & vàng nắng',sub:'Mận hồng · hồng phấn · vàng',note:'Hồng cánh sen gợi hình hoa sen trong logo, vàng #FFD35C giữ vai trò nút chính. Dịu và nhân văn.',dark:'#6B2F4A',dark2:'#864060',feature:'#9A4A6B',cta:'#FFD35C',ctaText:'#2A1A10',ctaD:'#FFD35C',ctaDText:'#2A1A10',accent:'#FFD35C',label:'#7A3553',heading:'#43202F',body:'#5E4452',line:'#F0DEE6',soft:'#FFFAFC',tint:'#FBE6EE',alt:'#FFF4D6',r1:'#E8A5BE',r2:'#FFD35C',r3:'#9A4A6B',r4:'#F2A25C',badgeA:'#9A4A6B',badgeB:'#6B2F4A',cov1:'#F7CFDD',cov2:'#FFF0C2',cov3:'#FBE6EE'},
+'46':{name:'Than chì & vàng nắng',sub:'Xám than · vàng #FFD21F · trắng ngà',note:'Tối giản, hiện đại: khung xám than, vàng rực làm điểm nhấn duy nhất. Chữ đen trên vàng đọc rất rõ.',dark:'#26282B',dark2:'#3A3D41',feature:'#44484D',cta:'#FFD21F',ctaText:'#151515',ctaD:'#FFD21F',ctaDText:'#151515',accent:'#FFD21F',label:'#6B5400',heading:'#1E2023',body:'#464A4F',line:'#E6E4DC',soft:'#FFFEF8',tint:'#FFF3C4',alt:'#F1F1EE',r1:'#FFD21F',r2:'#8B9096',r3:'#44484D',r4:'#F2A93B',badgeA:'#44484D',badgeB:'#26282B',cov1:'#FFE98A',cov2:'#E9EAEC',cov3:'#FFF3C4'},
+'47':{name:'Ô liu & hồng đất',sub:'Xanh ô liu · vàng nắng · hồng đất nhạt',note:'Ô liu trầm kết hợp vàng ấm và chút hồng đất, tạo cảm giác tự nhiên, thủ công, không quá y tế.',dark:'#4A4F2B',dark2:'#5F6638',feature:'#6B7340',cta:'#F4C26A',ctaText:'#26200E',ctaD:'#F4C26A',ctaDText:'#26200E',accent:'#F4C26A',label:'#4A4F2B',heading:'#2D3019',body:'#4C4F3B',line:'#E7E6D3',soft:'#FDFCF3',tint:'#F3F1D9',alt:'#F8E6DC',r1:'#B7BE82',r2:'#F4C26A',r3:'#6B7340',r4:'#D79A82',badgeA:'#6B7340',badgeB:'#4A4F2B',cov1:'#E3E6BC',cov2:'#FBE9D8',cov3:'#F3F1D9'},
+'48':{name:'Xanh đêm & vàng kem',sub:'Navy sâu · vàng kem · xám xanh',note:'Navy sâu tạo cảm giác chuyên môn, vàng kem #FFD866 mềm hơn vàng rực. Phù hợp phần thông tin lâm sàng, guideline.',dark:'#1B2F4B',dark2:'#2A4467',feature:'#2A4467',cta:'#FFD866',ctaText:'#1F1A0A',ctaD:'#FFD866',ctaDText:'#1F1A0A',accent:'#FFE49A',label:'#1B2F4B',heading:'#1B2F4B',body:'#43556B',line:'#DCE2EA',soft:'#FFFCF3',tint:'#FFF3D0',alt:'#E6ECF4',r1:'#1B2F4B',r2:'#FFD866',r3:'#6E8DB5',r4:'#F2A93B',badgeA:'#2A4467',badgeB:'#1B2F4B',cov1:'#FFF0C4',cov2:'#E6ECF4',cov3:'#FFE8B8'}
 };
 var ORDER=['30','31','20','4','5','8','9','10','13','16','17','33','34','35','36','37','38','39','40'];
+var NEWORDER=['41','42','43','44','45','46','47','48'];
 var cur='30',curL='a',page='home';
 
 function logoHTML(dark){
@@ -669,7 +719,7 @@ function lum(h){var c=[1,3,5].map(function(i){var v=parseInt(h.substr(i,2),16)/2
 function ratio(a,b){var x=lum(a),y=lum(b);if(x<y){var z=x;x=y;y=z}return (x+.05)/(y+.05)}
 function renderLogos(){
  var t=T[cur];
- document.getElementById('logos').innerHTML='<div class="logo-identity"><span class="ico"><svg viewBox="0 0 100 100" aria-hidden="true">'+logoIcon('a',t,false)+'</svg></span><div><strong>Sen hy vọng</strong><small>Một biểu tượng thống nhất · 13 cách phối màu</small></div></div>';
+ document.getElementById('logos').innerHTML='<div class="logo-identity"><span class="ico"><svg viewBox="0 0 100 100" aria-hidden="true">'+logoIcon('a',t,false)+'</svg></span><div><strong>Sen hy vọng</strong><small>Một biểu tượng thống nhất · 27 cách phối màu</small></div></div>';
  document.getElementById('lpv').innerHTML='<div class="pv l"><span class="lg">'+logoHTML(false)+'</span></div><div class="pv d" style="background:'+t.dark+'"><span class="lg">'+logoHTML(true)+'</span></div>';
 }
 function apply(id){
@@ -683,10 +733,12 @@ function apply(id){
  document.getElementById('note').textContent=t.name+': '+t.note;
  document.getElementById('cr').textContent='Độ tương phản chữ nội dung trên nền kem: '+ratio(t.body,t.soft).toFixed(1)+' : 1 · tiêu đề trên nền trắng: '+ratio(t.heading,'#FFFFFF').toFixed(1)+' : 1 (chuẩn đọc dễ từ 4.5 : 1).';
 }
-document.getElementById('palettes').innerHTML=ORDER.slice(3).map(function(id){var t=T[id];return '<button class="bp" data-id="'+id+'" aria-pressed="false"><span class="dots">'+['dark','feature','cta','accent','soft'].map(function(k){return '<i style="background:'+t[k]+'"></i>'}).join('')+'</span>'+t.name+'<small>'+t.sub+'</small></button>'}).join('');
-document.getElementById('yellowPalettes').innerHTML=ORDER.slice(0,3).map(function(id){var t=T[id];return '<button class="bp" data-id="'+id+'" aria-pressed="false"><span class="dots">'+((id==='20'||id==='30'||id==='31')?['r1','r2','r3','r4','r5']:['r1','r2','r3','r4']).map(function(k){return '<i style="background:'+t[k]+'"></i>'}).join('')+'</span>'+t.name+'<small>'+t.sub+'</small></button>'}).join('');
- document.getElementById('demo').addEventListener('click',function(e){var b=e.target.closest('.bp');if(b)apply(b.dataset.id)});
-
+function palBtn(id,keys){var t=T[id];return '<button class="bp" data-id="'+id+'" aria-pressed="false"><span class="dots">'+keys.map(function(k){return '<i style="background:'+t[k]+'"></i>'}).join('')+'</span>'+t.name+'<small>'+t.sub+'</small></button>'}
+var K5=['dark','feature','cta','accent','soft'];
+document.getElementById('palettes').innerHTML=ORDER.slice(3).map(function(id){return palBtn(id,K5)}).join('');
+document.getElementById('newPalettes').innerHTML=NEWORDER.map(function(id){return palBtn(id,K5)}).join('');
+document.getElementById('yellowPalettes').innerHTML=ORDER.slice(0,3).map(function(id){return palBtn(id,(id==='20'||id==='30'||id==='31')?['r1','r2','r3','r4','r5']:['r1','r2','r3','r4'])}).join('');
+document.getElementById('demo').addEventListener('click',function(e){var b=e.target.closest('.bp');if(b)apply(b.dataset.id)});
 
 /* ===== chuyển trang ===== */
 function show(p){
@@ -695,7 +747,7 @@ function show(p){
  document.getElementById('pArt').hidden=(p!=='art');
  document.getElementById('bHome').setAttribute('aria-pressed',p==='home');
  document.getElementById('bArt').setAttribute('aria-pressed',p==='art');
- document.querySelectorAll('#menu a').forEach(function(a){a.classList.toggle('on',p==='art'&&a.dataset.i==='0')});
+ document.querySelectorAll('#menu a').forEach(function(a){a.classList.toggle('on',p==='art'&&a.dataset.i==='2')});
  window.scrollTo(0,0);
 }
 document.getElementById('bHome').onclick=function(){show('home')};
