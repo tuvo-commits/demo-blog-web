@@ -400,6 +400,38 @@ footer.ft .wrap{padding-top:48px;padding-bottom:24px}
 #demo .tone-buttons small{display:block;color:#cbd5ce;font-size:10px;line-height:1.5;margin-top:4px}
 #demo .tone-buttons .dots{margin-bottom:6px}
 #demo .tone-buttons .group-meaning{color:#f4e6ad;font-size:10px;margin-top:7px}
+
+/* Appearance and language controls */
+#demo .pref-controls{display:grid;gap:12px;margin:14px 0 20px;padding:13px;background:#2c3835;border:1px solid #42514a;border-radius:14px}
+#demo .pref-label{font-size:12px;color:#e4eee7;font-weight:600;display:block;margin-bottom:7px}
+#demo .pref-switch{display:flex;gap:5px;padding:4px;background:#17221f;border-radius:11px}
+#demo .pref-switch button{flex:1;min-width:0;padding:9px 5px;border:1px solid transparent;border-radius:8px;color:#d5e4dc;background:transparent;font-size:12px}
+#demo .pref-switch button[aria-pressed=true]{background:#FFDA00;color:#222016;font-weight:700}
+#site.is-dark{color-scheme:dark;background:#141b1a!important;--dark:#101918!important;--dark2:#273531!important;--heading:#f2f5ee!important;--body:#d0dad5!important;--line:#40534b!important;--soft:#1e2b26!important;--tint:#28372e!important;--alt:#2d3b31!important;--feature:#375b4b!important;--label:#e7ce77!important;--badgeA:#446d5b!important;--badgeB:#766137!important}
+#site.is-dark header.hd,#site.is-dark nav.mn,#site.is-dark .ac,#site.is-dark .rc,#site.is-dark .wcard,#site.is-dark .rev,#site.is-dark .s2,#site.is-dark .art .links a,#site.is-dark .fam .grid2 a,#site.is-dark .alone .g div{background:#1b2723!important}
+#site.is-dark .hero,#site.is-dark .feat,#site.is-dark .fam{background:linear-gradient(115deg,#1c2924,#263329)!important}
+#site.is-dark .pill,#site.is-dark .chip,#site.is-dark .tc,#site.is-dark .s3,#site.is-dark .series,#site.is-dark .alone .box,#site.is-dark .key,#site.is-dark .art .callout,#site.is-dark .gl div:nth-child(odd){background:#28372e!important;color:#f2f5ee!important;border-color:#40534b!important}
+#site.is-dark .search-s,#site.is-dark .sbox,#site.is-dark .rev .l2{background:#293a32!important;color:#f2f5ee!important}
+#site.is-dark .sbox span{color:#d2d9d4}
+#site.is-dark .tc:nth-child(n),#site.is-dark .rc:nth-child(n){background:#24332c!important}
+#site.is-dark .hcard,#site.is-dark .trust,#site.is-dark footer.ft,#site.is-dark .topbar,#site.is-dark .s1{background:#101918!important}
+#site.is-dark .fcard{background:#375b4b!important;color:#fff!important}
+#site.is-dark .fcard h3,#site.is-dark .fcard p,#site.is-dark .fcard .lbl,#site.is-dark .fcard .chip{color:#fff!important}
+#site.is-dark .art{color:#d0dad5!important}
+#site.is-dark .btn-dark{background:#415b4b!important}
+#site.is-dark .fig,#site.is-dark .famfig{background:#32463a!important}
+#site.is-dark .rc .n{color:#18221c}
+#site.is-dark .tag{color:#18221c}
+#site.is-dark .btn-cta,#site.is-dark .btn-ctad,#site.is-dark .sbox button{background:#FFDA00!important;color:#1a1a1a!important}
+#site.is-dark .fcard .chip{border-color:#91ac9d!important}
+#site.is-dark .lg,#site.is-dark nav.mn a{color:#f2f5ee!important}
+#site.is-dark .rev small,#site.is-dark .meta{color:#c0cdc5}
+#site.is-dark .art .cv{filter:brightness(.75)}
+#site.is-dark .hero .c1,#site.is-dark .hero .c2{opacity:.14}
+#site.is-dark .toc a{color:#c0cdc5}
+#site.is-dark .toc a.on{color:#f2f5ee}
+#site.is-dark .gl div{border-color:#40534b}
+#site.is-dark .topbar,#site.is-dark .ft{color:#f2f5ee}
 </style>
 </head>
 <body>
@@ -534,7 +566,12 @@ footer.ft .wrap{padding-top:48px;padding-bottom:24px}
         <div class="act"><span>Lưu</span><span>Chia sẻ</span><span>In</span></div>
       </nav>
 
-      <article class="art">
+      <article class="art"><div id="englishArticle" hidden><div class="key"><span class="lbl">Key takeaways</span><ul><li>Feeling anxious, sad, or uncertain after a blood cancer diagnosis is common and deserves attention.</li><li>Fear of recurrence can continue even during remission.</li><li>Emotional, practical, and financial support needs are important parts of cancer care.</li></ul></div>
+<h2 class="serif">Emotional distress is common</h2><p>Australian studies of people affected by blood cancer have documented anxiety, depression, distress, and fear of recurrence. Results vary across populations and study settings, so individual statistics should not be generalized to everyone.</p>
+<h2 class="serif">Unmet needs can affect well-being</h2><p>Research suggests that unmet psychological and practical support needs can be associated with anxiety and depression later in treatment and recovery. Asking for support early is a reasonable part of care.</p>
+<h2 class="serif">Mental health is part of cancer care</h2><p>A 2025 systematic review found associations between depression and certain outcomes among people with hematologic cancers. These findings do not establish that depression causes poorer survival. Talk with your clinical team if sadness, anxiety, or distress persists.</p>
+<h2 class="serif">Practical steps you can take</h2><ul class="q"><li>Tell your healthcare team about sleep, fear, mood, and everyday challenges.</li><li>Ask about counseling, social work, or patient support services.</li><li>Seek help with travel, finances, and other practical needs.</li><li>Connect with trusted support communities if that feels helpful.</li></ul>
+<h2 class="serif">Further reading and references</h2><p>The original Vietnamese article includes detailed study statistics, limitations, references, and links to Cancer Council Australia. Switch to Vietnamese to read the complete original article.</p><p class="disc2">Educational information only; not a substitute for individualized medical advice.</p></div><div id="vietnameseArticle">
         <div class="cv"><i></i><i></i></div>
         <div class="key"><span class="lbl">Điểm chính</span><ul>
           <li>Lo âu, đau khổ, bất định và buồn bã sau chẩn đoán bệnh bạch cầu là điều bình thường, không phải dấu hiệu của sự yếu đuối.</li>
@@ -593,6 +630,7 @@ footer.ft .wrap{padding-top:48px;padding-bottom:24px}
         </ol>
 
         <p class="disc2">Bài viết chỉ mang tính cung cấp thông tin, không thay thế tư vấn y khoa. Nếu bạn đang cảm thấy quá tải, hãy liên hệ bác sĩ hoặc dịch vụ hỗ trợ sức khỏe tâm thần tại nơi bạn sống.</p>
+</div>
       </article>
 
       <aside class="side">
@@ -623,6 +661,10 @@ footer.ft .wrap{padding-top:48px;padding-bottom:24px}
 <aside id="demo" aria-label="Bảng điều khiển demo">
   <h1>OncoHub · Demo logo và bảng phối màu</h1>
   <p class="sub">Một biểu tượng hoa sen duy nhất, tự phối màu cùng 20 bảng màu được chọn lọc và gom nhóm theo sắc thái. Chọn một tone để xem toàn bộ giao diện thay đổi trực tiếp.</p>
+<div class="pref-controls" aria-label="Giao diện và ngôn ngữ">
+    <div><span class="pref-label" id="appearanceLabel">Chế độ hiển thị</span><div class="pref-switch" role="group" aria-label="Chế độ sáng tối"><button id="modeLight" aria-pressed="true">☀ Sáng</button><button id="modeDark" aria-pressed="false">☾ Tối</button></div></div>
+    <div><span class="pref-label" id="languageLabel">Ngôn ngữ / Language</span><div class="pref-switch" role="group" aria-label="Chọn ngôn ngữ"><button id="langVi" aria-pressed="true">🇻🇳 Tiếng Việt</button><button id="langEn" aria-pressed="false">🇬🇧 English</button></div></div>
+  </div>
   <div class="seg" role="group" aria-label="Chọn trang">
     <button id="bHome" aria-pressed="true">Trang chủ</button>
     <button id="bArt" aria-pressed="false">Trang bài viết</button>
@@ -827,6 +869,49 @@ if('IntersectionObserver' in window){
 tocLinks.forEach(function(a){a.addEventListener('click',function(){tocLinks.forEach(function(x){x.classList.remove('on')});a.classList.add('on')})});
 
 apply('30');show('home');
+})();
+</script>
+
+<script>
+(function(){
+ const site=document.getElementById('site');
+ const panel=document.getElementById('demo');
+ const dictionary={"OncoHub · Demo logo và bảng phối màu": "OncoHub · Logo & color palette demo", "Một biểu tượng hoa sen duy nhất, tự phối màu cùng 20 bảng màu được chọn lọc và gom nhóm theo sắc thái. Chọn một tone để xem toàn bộ giao diện thay đổi trực tiếp.": "One lotus-inspired identity with 20 curated palettes grouped by color family. Choose a palette to preview it across the website.", "Trang chủ": "Home", "Trang bài viết": "Article", "Logo OncoHub · đồng bộ theo màu": "OncoHub logo · adaptive colors", "3 tone vàng chủ đạo · Giữ nguyên": "3 signature yellow palettes", "17 tone bổ trợ · Gom theo nhóm màu": "17 complementary palettes · grouped", "Màu đang dùng": "Current colors", "Sen hy vọng": "Lotus of Hope", "Một biểu tượng thống nhất · 20 cách phối màu": "One identity · 20 color variations", "Một sáng kiến cộng đồng của Medi-Link": "A Medi-Link community initiative", "Nội dung mang tính giáo dục · không thay thế tư vấn của bác sĩ điều trị": "Educational content · not a substitute for medical advice", "⌕ Tìm kiếm": "⌕ Search", "Tôi vừa được chẩn đoán": "I have just been diagnosed", "Thông tin đúng. Lựa chọn sáng suốt. Cùng nhau đi tiếp.": "Reliable information. Informed choices. Moving forward together.", "Bạn đang cần tìm điều gì?": "What are you looking for?", "Mỗi người đang ở một chặng khác nhau trong hành trình với ung thư. Hãy chọn điểm bắt đầu gần nhất với bạn — chúng tôi sẽ dẫn đường đến thông tin đã được kiểm duyệt.": "Everyone is at a different point in their cancer journey. Choose where you are today to find carefully reviewed information.", "Tìm theo loại ung thư, xét nghiệm, điều trị, tác dụng phụ…": "Search cancer types, tests, treatments, side effects…", "Tìm kiếm": "Search", "Tìm nhiều:": "Popular searches:", "Giai đoạn bệnh": "Cancer staging", "Tác dụng phụ": "Side effects", "Bắt đầu từ đây": "Start here", "Tôi vừa được chẩn đoán ung thư": "I have just been diagnosed with cancer", "Việc nên làm đầu tiên là hiểu chẩn đoán, chuẩn bị cho buổi gặp bác sĩ và tìm hỗ trợ.": "First, understand your diagnosis, prepare for your appointment, and find support.", "Xem hướng dẫn chi tiết →": "Read the full guide →", "Bạn quan tâm ung thư": "Which part of the body", "ở vùng nào của cơ thể?": "are you concerned about?", "Chọn một vùng trên cơ thể để xem các loại ung thư thường gặp ở vùng đó và đi thẳng đến nội dung cần tìm hiểu.": "Select a body region to explore related cancer types and relevant information.", "Khám phá theo chủ đề": "Explore by topic", "Tám trụ cột nội dung trả lời tám câu hỏi người bệnh và người nhà thường đặt ra.": "Eight key topics answering common questions from patients and caregivers.", "Kiến thức mới trong tuần": "New this week", "Mỗi tuần ba bài: một bài để hiểu, một bài để lựa chọn và một bài để đồng hành.": "Three weekly reads: understanding, decision-making, and support.", "Các series nổi bật": "Featured series", "Theo cùng nội dung trên Facebook": "Follow these series on Facebook", "Theo dõi trên Facebook": "Follow on Facebook", "Chuyên mục đặc trưng": "Featured topic", "Hiểu về thử nghiệm": "Understanding clinical", "lâm sàng": "trials", "Thử nghiệm lâm sàng là gì, diễn ra như thế nào và bạn có những quyền gì — được giải thích bằng tiếng Việt dễ hiểu, để bạn đặt đúng câu hỏi với bác sĩ.": "Learn how clinical trials work, what rights you have, and what to ask your doctor.", "Cam kết độc lập và minh bạch": "Our commitment to independence and transparency", "Chuyên mục chỉ mang tính giáo dục và không giới thiệu hay tuyển bệnh nhân cho bất kỳ cơ sở nào. Nếu một nghiên cứu có đơn vị thuộc Medi-Link cung cấp dịch vụ, chúng tôi sẽ công bố rõ ràng.": "This educational section does not recruit or refer patients. Any relevant Medi-Link service relationship will be disclosed.", "Tìm hiểu chính sách xung đột lợi ích →": "Read our conflict-of-interest policy →", "Dành cho người thân": "For loved ones", "Bạn đang chăm sóc người thân?": "Are you caring for someone?", "Bạn không phải làm một mình.": "You do not have to do it alone.", "Những hướng dẫn thực tế để trò chuyện, hỗ trợ và giữ sức cho chính bạn trong suốt hành trình.": "Practical guidance for communication, support, and caring for yourself along the way.", "Giao tiếp với người bệnh": "Talking with patients", "Chăm sóc thực tế": "Practical care", "Nói chuyện với trẻ em": "Talking with children", "Phòng tránh kiệt sức": "Preventing burnout", "Vào mục Dành cho người thân": "Explore caregiver resources", "Thông tin bạn có thể tin cậy": "Information you can trust", "Mỗi nội dung y khoa đều được biên soạn, kiểm duyệt và cập nhật": "Medical content is written, reviewed, and updated", "Mức độ kiểm duyệt tăng dần theo mức độ nhạy cảm của nội dung. AI chỉ hỗ trợ soạn thảo, không phải nguồn tham chiếu.": "Review standards depend on clinical sensitivity. AI may assist drafting but is not a source of evidence.", "Cấp 1": "Level 1", "Cấp 2": "Level 2", "Cấp 3": "Level 3", "Kiến thức giáo dục chung": "General health education", "Thông tin lâm sàng": "Clinical information", "Diễn giải guideline & khuyến cáo điều trị": "Clinical guidelines and recommendations", "Đội ngũ biên tập biên soạn, đối chiếu nguồn đáng tin cậy.": "Written by editors using trustworthy references.", "Cần medical reviewer thẩm định trước khi đăng.": "Requires medical review before publication.", "Bắt buộc có thẩm định của bác sĩ chuyên khoa.": "Requires specialist physician review.", "Nguồn ưu tiên:": "Preferred sources:", "Chúng tôi không đưa ra phác đồ điều trị cá nhân. Hãy trao đổi với bác sĩ điều trị về trường hợp của bạn.": "We do not provide individual treatment plans. Please discuss your situation with your treating physician.", "Chính sách biên tập": "Editorial policy", "Chính sách thẩm định y khoa": "Medical review policy", "Xung đột lợi ích": "Conflicts of interest", "Chính sách đính chính": "Corrections policy", "Quyền riêng tư": "Privacy", "Tuyên bố miễn trừ": "Disclaimer", "Bạn không đơn độc": "You are not alone", "Tìm bệnh viện, tổ chức hỗ trợ và người đồng hành phù hợp với hoàn cảnh của bạn và gia đình.": "Find hospitals, support organizations, and resources that suit you and your family.", "Tìm hỗ trợ →": "Find support →", "Bệnh viện & cơ sở điều trị": "Hospitals & treatment centers", "Thông tin tham khảo, không xếp hạng": "For reference, not ranked", "Tổ chức hỗ trợ": "Support organizations", "Các tổ chức cộng đồng và người bệnh": "Patient and community organizations", "Người đồng hành giúp bạn đi đúng bước": "Guidance through each step", "Hỗ trợ xã hội & tài chính": "Social & financial assistance", "Nguồn hỗ trợ thực tế cho gia đình": "Practical resources for families", "Nền tảng thông tin và hỗ trợ về ung thư bằng tiếng Việt: thông tin đúng, lựa chọn sáng suốt, cùng nhau đi tiếp.": "Vietnamese cancer information and support: reliable knowledge, informed choices, moving forward together.", "Tìm hiểu": "Learn", "Hiểu về ung thư": "Understanding cancer", "Điều trị": "Treatment", "Sống cùng ung thư": "Living with cancer", "Thử nghiệm lâm sàng": "Clinical trials", "Đồng hành": "Support", "Tìm hỗ trợ": "Find support", "Câu hỏi thường gặp": "FAQs", "Về chúng tôi": "About us", "Giới thiệu & sứ mệnh": "About & mission", "Cố vấn y khoa": "Medical advisors", "Liên hệ": "Contact", "Nội dung trên website này chỉ nhằm mục đích giáo dục và cung cấp thông tin chung, không thay thế chẩn đoán, tư vấn hay điều trị của bác sĩ. Chúng tôi không đưa ra phác đồ điều trị cá nhân.": "This website provides general educational information, not a substitute for diagnosis, medical advice, or treatment. We do not provide individual treatment plans.", "Sức khỏe tinh thần": "Mental health", "Trong bài này": "In this article", "Lưu": "Save", "Chia sẻ": "Share", "In": "Print", "Bạn không “yếu đuối”": "Your feelings are valid", "Nhu cầu chưa được đáp ứng": "Unmet support needs", "Chăm sóc tinh thần không phải “phần phụ”": "Mental health matters", "Những điều bạn có thể làm hôm nay": "What you can do today", "Lời cuối": "Final thoughts", "Tìm hiểu thêm": "Learn more", "Tài liệu tham khảo": "References", "“Tôi tưởng chỉ cần khỏe lại là xong.” Sức khỏe tinh thần khi sống cùng ung thư máu": "“I thought recovery was the end.” Mental health when living with blood cancer", "Lo âu, buồn bã và sợ tái phát là những cảm xúc rất thường gặp ở người bệnh ung thư máu. Bài viết tóm tắt các nghiên cứu tại Úc và gợi ý những việc bạn có thể làm ngay hôm nay.": "Anxiety, sadness, and fear of recurrence are common among people with blood cancer. This article summarizes Australian research and offers practical next steps.", "Biên soạn:": "Written by:", "Đội ngũ biên tập": "Editorial team", "Cập nhật:": "Updated:", "7 phút đọc": "7 min read", "Không có xung đột lợi ích cần công bố.": "No conflicts of interest to disclose.", "Điểm chính": "Key takeaways", "Bài liên quan": "Related articles", "Có câu hỏi chung về chủ đề này?": "Questions about this topic?", "Gửi câu hỏi": "Submit a question", "Xem hướng dẫn →": "Read the guide →", "Vàng kết hợp thiên nhiên": "Yellow & nature", "Vàng kết hợp sắc ấm": "Yellow & warm colors", "Hồng, sen và sắc dịu": "Pink, lotus & soft tones", "Xanh biển và san hô": "Ocean blue & coral", "Lavender và sắc trung tính": "Lavender & neutrals", "Hy vọng, hồi phục và cân bằng; vàng tạo năng lượng, xanh lá làm dịu mắt.": "Hope, renewal, and balance; yellow energizes while green feels calming.", "Sự quan tâm, gần gũi và đồng hành; phù hợp nội dung chia sẻ cảm xúc.": "Care, warmth, and companionship; ideal for emotional support content.", "Đồng cảm, nhẹ nhàng, mang đến cảm giác được lắng nghe và nâng đỡ.": "Empathy and gentleness; a feeling of being heard and supported.", "Tin cậy, an toàn và tích cực; thích hợp nội dung sức khỏe và tư vấn.": "Trust, safety, and optimism; well suited to health information.", "Thư thái, yên tĩnh và dễ đọc; phù hợp bài viết dài.": "Relaxing, quiet, and readable; suitable for long-form articles.", "Vùng đầu & cổ": "Head & neck", "Vùng ngực": "Chest", "Vùng bụng": "Abdomen", "Vùng chậu": "Pelvis", "Xem vùng này →": "Explore this region →", "Ung thư của tôi là gì?": "What is my cancer?", "Tôi có nguy cơ không?": "Am I at risk?", "Bây giờ tôi phải làm gì?": "What should I do now?", "Các lựa chọn của tôi là gì?": "What are my options?", "Có lựa chọn nào khác không?": "Are there other options?", "Làm sao sống tốt hơn?": "How can I live better?", "Tôi giúp người thân thế nào?": "How can I help my loved one?", "Tôi tìm sự giúp đỡ ở đâu?": "Where can I find help?", "Phòng ngừa & phát hiện sớm": "Prevention & early detection", "Khi vừa được chẩn đoán": "Newly diagnosed", "Điều trị ung thư": "Cancer treatment", "Người thân & người chăm sóc": "Family & caregivers", "Đồng hành & hỗ trợ": "Care & support", "Giải phẫu bệnh là gì và vì sao kết quả này quan trọng?": "What is pathology, and why do results matter?", "Chuẩn bị gì trước buổi hẹn bác sĩ để bàn về điều trị?": "How to prepare for a treatment appointment", "Người chăm sóc cũng cần được chăm sóc: nhận biết kiệt sức": "Caregivers need care too: recognizing burnout", "Thứ hai · Hiểu": "Monday · Understand", "Thứ tư · Lựa chọn": "Wednesday · Decide", "Thứ sáu · Đồng hành": "Friday · Support", "Đã duyệt y khoa · 6 phút đọc": "Medically reviewed · 6 min read", "Đã duyệt y khoa · 5 phút đọc": "Medically reviewed · 5 min read", "Đã duyệt y khoa · 7 phút đọc": "Medically reviewed · 7 min read"};
+ const entries=[];
+ const walker=document.createTreeWalker(document.getElementById('shell'),NodeFilter.SHOW_TEXT);
+ let node;
+ while(node=walker.nextNode()){
+  if(node.parentElement.closest('#englishArticle,.pref-controls'))continue;
+  const value=node.nodeValue;
+  if(!value.trim())continue;
+  entries.push({node,vi:value,en:dictionary[value.trim()]||null});
+ }
+ const storedMode=(()=>{try{return localStorage.getItem('onco-mode')}catch(e){return null}})();
+ const storedLang=(()=>{try{return localStorage.getItem('onco-lang')}catch(e){return null}})();
+ let mode=storedMode==='dark'?'dark':'light',lang=storedLang==='en'?'en':'vi';
+ const viArticle=document.getElementById('vietnameseArticle'),enArticle=document.getElementById('englishArticle');
+ function save(key,value){try{localStorage.setItem(key,value)}catch(e){}}
+ function setMode(next){mode=next;site.classList.toggle('is-dark',mode==='dark');document.getElementById('modeLight').setAttribute('aria-pressed',mode==='light');document.getElementById('modeDark').setAttribute('aria-pressed',mode==='dark');save('onco-mode',mode)}
+ function setLang(next){
+  lang=next;document.documentElement.lang=lang;document.getElementById('langVi').setAttribute('aria-pressed',lang==='vi');document.getElementById('langEn').setAttribute('aria-pressed',lang==='en');
+  entries.forEach(item=>{if(item.node.isConnected&&item.en)item.node.nodeValue=lang==='en'?item.vi.replace(item.vi.trim(),item.en):item.vi});
+  viArticle.hidden=lang==='en';enArticle.hidden=lang!=='en';
+  document.getElementById('appearanceLabel').textContent=lang==='en'?'Appearance':'Chế độ hiển thị';
+  document.getElementById('modeLight').textContent=lang==='en'?'☀ Light':'☀ Sáng';
+  document.getElementById('modeDark').textContent=lang==='en'?'☾ Dark':'☾ Tối';
+  document.getElementById('languageLabel').textContent=lang==='en'?'Language':'Ngôn ngữ / Language';
+  save('onco-lang',lang);
+ }
+ document.getElementById('modeLight').onclick=()=>setMode('light');document.getElementById('modeDark').onclick=()=>setMode('dark');
+ document.getElementById('langVi').onclick=()=>setLang('vi');document.getElementById('langEn').onclick=()=>setLang('en');
+ // Dynamic palette details are generated on selection. Translate the new nodes as well.
+ const observer=new MutationObserver(()=>{
+  if(lang!=='en')return;
+  const nodes=panel.querySelectorAll('#note,#pal,#cr,#lpv');
+  nodes.forEach(el=>{const w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);let n;while(n=w.nextNode()){const str=n.nodeValue.trim();if(dictionary[str])n.nodeValue=n.nodeValue.replace(str,dictionary[str]);}});
+ });
+ observer.observe(panel,{childList:true,subtree:true});
+ setMode(mode);setLang(lang);
 })();
 </script>
 </body>
