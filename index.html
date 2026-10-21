@@ -57,9 +57,9 @@ button{font-family:inherit;cursor:pointer}
 #demo{background:#202a29;box-shadow:-8px 0 28px rgba(20,50,42,.10)}
 #demo h1{font-size:18px;letter-spacing:-.025em}
 #demo h2{color:#dcebe2;font-size:12px;margin-top:24px}
-#palettes,#yellowPalettes,#newPalettes{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-#palettes button,#yellowPalettes button,#newPalettes button{background:#2c3835;border-color:#42514a;border-radius:14px;padding:12px 10px;min-height:82px;color:#fff}
-#palettes button[aria-pressed="true"],#yellowPalettes button[aria-pressed="true"],#newPalettes button[aria-pressed="true"]{background:#3e4938;border-color:#ffd77d;box-shadow:0 0 0 1px #ffd77d}
+#palettes,#yellowPalettes,#newPalettes,#tenPalettes{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+#palettes button,#yellowPalettes button,#newPalettes button,#tenPalettes button{background:#2c3835;border-color:#42514a;border-radius:14px;padding:12px 10px;min-height:82px;color:#fff}
+#palettes button[aria-pressed="true"],#yellowPalettes button[aria-pressed="true"],#newPalettes button[aria-pressed="true"],#tenPalettes button[aria-pressed="true"]{background:#3e4938;border-color:#ffd77d;box-shadow:0 0 0 1px #ffd77d}
 #demo .sub{font-size:12px;line-height:1.7}
 .logo-identity{display:flex;gap:12px;align-items:center;background:#2c3835;padding:12px;border-radius:16px;color:white}
 .logo-identity .ico{height:64px;width:64px;border-radius:14px;background:#fff;display:grid;place-items:center;flex:none}
@@ -75,7 +75,7 @@ button{font-family:inherit;cursor:pointer}
 #site .art p{font-size:16px;line-height:1.9}
 #site .art{max-width:72ch}
 #site .meta,#site .tc p{font-size:13px}
-@media(max-width:860px){#palettes,#yellowPalettes,#newPalettes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:860px){#palettes,#yellowPalettes,#newPalettes,#tenPalettes{grid-template-columns:repeat(2,minmax(0,1fr))}}
 /* ===== Website ===== */
 #site{container-type:inline-size;background:#fff;color:var(--body);max-width:1440px;margin:0 auto;font-size:15px;line-height:1.6}
 #site *{transition:background-color .35s,color .35s,border-color .35s}
@@ -365,10 +365,41 @@ footer.ft .wrap{padding-top:48px;padding-bottom:24px}
 #site.tone-03 .art p,#site.tone-03 .art ul.q{line-height:1.85}
 #site.tone-03 .btn-cta:hover,#site.tone-03 .btn-ctad:hover{background:#E6AE0B}
 
+/* Tone mới: phần nền dùng token riêng theo tone để không bị màu cố định ghi đè */
+#site.new-ten header.hd{background:var(--soft)}
+#site.new-ten nav.mn{background:var(--soft)}
+#site.new-ten .hero{background:linear-gradient(120deg,var(--soft),var(--tint))}
+#site.new-ten .pill{background:var(--alt);border-color:var(--line)}
+#site.new-ten .rc:nth-child(2){background:var(--soft)}
+#site.new-ten .rc:nth-child(3){background:var(--alt)}
+#site.new-ten .rc:nth-child(4){background:var(--tint)}
+#site.new-ten .tc:nth-child(4n+1){background:var(--soft)}
+#site.new-ten .tc:nth-child(4n+2){background:var(--alt)}
+#site.new-ten .tc:nth-child(4n+3){background:var(--tint)}
+#site.new-ten .tc:nth-child(4n){background:color-mix(in srgb,var(--r3) 22%,white)}
+#site.new-ten .feat{background:linear-gradient(115deg,var(--soft),var(--alt))}
+#site.new-ten .fam{background:linear-gradient(100deg,var(--alt),var(--soft))}
+#site.new-ten .art{color:var(--body)}
 /* Đọc lâu: cỡ chữ, độ dài dòng và vùng nền ổn định */
 #site .art p,#site .art ul.q{line-height:1.85;letter-spacing:.005em}
 #site .art p{max-width:65ch}
 #site .ac,#site .tc,#site .rc{box-shadow:0 3px 18px rgba(25,40,35,.025)}
+#demo .color-explain{padding:9px 10px;border:1px solid #45514b;border-radius:10px;background:#283633}
+#demo .color-explain .sw{margin-bottom:5px}
+#demo .color-explain small{display:block;color:#cbd8d0;font-size:11px;line-height:1.55;padding-left:32px}
+#demo #pal{gap:7px}
+
+/* 20 selected tones — grouped buttons with meaning directly above */
+#groupedPalettes{display:grid;gap:12px}
+#demo .tone-group{border:1px solid #42514a;border-radius:14px;padding:10px;background:#26332f}
+#demo .tone-group h3{font-size:12px;font-weight:600;color:#fff;margin-bottom:5px}
+#demo .tone-group p{font-size:11px;line-height:1.6;color:#d5e4d8;margin-bottom:10px}
+#demo .tone-buttons{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#demo .tone-buttons button{background:#2c3835;border:1.5px solid #42514a;border-radius:12px;padding:10px 8px;color:#fff;text-align:left;font-size:11.5px;min-height:86px}
+#demo .tone-buttons button[aria-pressed="true"]{border-color:#ffd77d;background:#3e4938}
+#demo .tone-buttons small{display:block;color:#cbd5ce;font-size:10px;line-height:1.5;margin-top:4px}
+#demo .tone-buttons .dots{margin-bottom:6px}
+#demo .tone-buttons .group-meaning{color:#f4e6ad;font-size:10px;margin-top:7px}
 </style>
 </head>
 <body>
@@ -591,7 +622,7 @@ footer.ft .wrap{padding-top:48px;padding-bottom:24px}
 
 <aside id="demo" aria-label="Bảng điều khiển demo">
   <h1>OncoHub · Demo logo và bảng phối màu</h1>
-  <p class="sub">Một biểu tượng hoa sen duy nhất, tự phối màu cùng 27 bảng màu (3 tone vàng chủ đạo + 16 tone bổ trợ + 8 tone mới). Chọn một tone để xem toàn bộ giao diện thay đổi trực tiếp.</p>
+  <p class="sub">Một biểu tượng hoa sen duy nhất, tự phối màu cùng 20 bảng màu được chọn lọc và gom nhóm theo sắc thái. Chọn một tone để xem toàn bộ giao diện thay đổi trực tiếp.</p>
   <div class="seg" role="group" aria-label="Chọn trang">
     <button id="bHome" aria-pressed="true">Trang chủ</button>
     <button id="bArt" aria-pressed="false">Trang bài viết</button>
@@ -599,12 +630,10 @@ footer.ft .wrap{padding-top:48px;padding-bottom:24px}
   <h2>Logo OncoHub · đồng bộ theo màu</h2>
   <div id="logos" role="group" aria-label="Logo chính thức"></div>
   <div id="lpv" aria-live="polite"></div>
-  <h2>3 tone vàng chủ đạo · Vàng và chữ đen</h2>
+  <h2>3 tone vàng chủ đạo · Giữ nguyên</h2>
   <div id="yellowPalettes" class="palette-section"></div>
-  <h2>16 tone phối màu bổ trợ · Dịu mắt và tươi vui</h2>
-  <div id="palettes" role="group" aria-label="Chọn bảng phối màu"></div>
-  <h2>8 tone mới thêm · Giữ vàng làm điểm nhấn</h2>
-  <div id="newPalettes" role="group" aria-label="Chọn bảng phối màu mới"></div>
+  <h2>17 tone bổ trợ · Gom theo nhóm màu</h2>
+  <div id="groupedPalettes"></div>
   <h2>Màu đang dùng</h2>
   <div id="pal" aria-live="polite"></div>
   <div id="note" aria-live="polite"></div>
@@ -686,6 +715,19 @@ var T={
 '47':{name:'Ô liu & hồng đất',sub:'Xanh ô liu · vàng nắng · hồng đất nhạt',note:'Ô liu trầm kết hợp vàng ấm và chút hồng đất, tạo cảm giác tự nhiên, thủ công, không quá y tế.',dark:'#4A4F2B',dark2:'#5F6638',feature:'#6B7340',cta:'#F4C26A',ctaText:'#26200E',ctaD:'#F4C26A',ctaDText:'#26200E',accent:'#F4C26A',label:'#4A4F2B',heading:'#2D3019',body:'#4C4F3B',line:'#E7E6D3',soft:'#FDFCF3',tint:'#F3F1D9',alt:'#F8E6DC',r1:'#B7BE82',r2:'#F4C26A',r3:'#6B7340',r4:'#D79A82',badgeA:'#6B7340',badgeB:'#4A4F2B',cov1:'#E3E6BC',cov2:'#FBE9D8',cov3:'#F3F1D9'},
 '48':{name:'Xanh đêm & vàng kem',sub:'Navy sâu · vàng kem · xám xanh',note:'Navy sâu tạo cảm giác chuyên môn, vàng kem #FFD866 mềm hơn vàng rực. Phù hợp phần thông tin lâm sàng, guideline.',dark:'#1B2F4B',dark2:'#2A4467',feature:'#2A4467',cta:'#FFD866',ctaText:'#1F1A0A',ctaD:'#FFD866',ctaDText:'#1F1A0A',accent:'#FFE49A',label:'#1B2F4B',heading:'#1B2F4B',body:'#43556B',line:'#DCE2EA',soft:'#FFFCF3',tint:'#FFF3D0',alt:'#E6ECF4',r1:'#1B2F4B',r2:'#FFD866',r3:'#6E8DB5',r4:'#F2A93B',badgeA:'#2A4467',badgeB:'#1B2F4B',cov1:'#FFF0C4',cov2:'#E6ECF4',cov3:'#FFE8B8'}
 };
+/* ===== 9 tone vàng mới: sen + hướng dương ===== */
+Object.assign(T,{
+'62':{name:'02 · Vàng – Cam đào – Kem',sub:'Ấm áp, gần gũi',note:'Vàng #FFDA00 là điểm nhấn chính; phối cùng #FFA552, #FFD6B8; nền #FFF9F0, chữ #453A32.',dark:'#453A32',dark2:'#5D544D',feature:'#453A32',cta:'#FFDA00',ctaText:'#171717',ctaD:'#FFDA00',ctaDText:'#171717',accent:'#FFE58A',label:'#453A32',heading:'#453A32',body:'#635A53',line:'#FFE7D0',soft:'#FFF9F0',tint:'#FFEADA',alt:'#FFEBD9',r1:'#FFDA00',r2:'#FFA552',r3:'#FFD6B8',r4:'#FFC029',r5:'#453A32',badgeA:'#453A32',badgeB:'#865F3D',cov1:'#FFEF94',cov2:'#FFD9B6',cov3:'#FFE6D4'},
+'63':{name:'03 · Vàng – Hồng pastel – Sage',sub:'Yêu thương, dịu dàng',note:'Vàng #FFDA00 là điểm nhấn chính; phối cùng #F6C8D2, #B5C9AE; nền #FFF8F5, chữ #3E5145.',dark:'#3E5145',dark2:'#57685D',feature:'#3E5145',cta:'#FFDA00',ctaText:'#171717',ctaD:'#FFDA00',ctaDText:'#171717',accent:'#FFE58A',label:'#3E5145',heading:'#3E5145',body:'#5D6D63',line:'#FDF0F3',soft:'#FFF8F5',tint:'#D9E3D5',alt:'#FDF3F5',r1:'#FFDA00',r2:'#F6C8D2',r3:'#B5C9AE',r4:'#FAD169',r5:'#3E5145',badgeA:'#3E5145',badgeB:'#7E7B76',cov1:'#FFEF94',cov2:'#FBE8EC',cov3:'#D3DFCE'},
+'64':{name:'04 · Vàng – Xanh dương – Trắng',sub:'Tin cậy, kiến thức',note:'Vàng #FFDA00 là điểm nhấn chính; phối cùng #8CCCF2, #E7F4FC; nền #FFFFFF, chữ #29465B.',dark:'#29465B',dark2:'#455E70',feature:'#29465B',cta:'#FFDA00',ctaText:'#171717',ctaD:'#FFDA00',ctaDText:'#171717',accent:'#FFE58A',label:'#29465B',heading:'#29465B',body:'#4B6475',line:'#E0F1FB',soft:'#FFFFFF',tint:'#F3F9FD',alt:'#E6F4FC',r1:'#FFDA00',r2:'#8CCCF2',r3:'#E7F4FC',r4:'#C6D379',r5:'#29465B',badgeA:'#29465B',badgeB:'#4C7590',cov1:'#FFEF94',cov2:'#CFEAFA',cov3:'#F1F8FD'},
+'65':{name:'05 · Vàng – Lavender – Kem',sub:'Thư giãn, tĩnh lặng',note:'Vàng #FFDA00 là điểm nhấn chính; phối cùng #C9B8EC, #F1ECFB; nền #FFFAEF, chữ #49415C.',dark:'#49415C',dark2:'#615A71',feature:'#49415C',cta:'#FFDA00',ctaText:'#171717',ctaD:'#FFDA00',ctaDText:'#171717',accent:'#FFE58A',label:'#49415C',heading:'#49415C',body:'#665F76',line:'#F0ECFA',soft:'#FFFAEF',tint:'#F8F5FD',alt:'#F3EFFB',r1:'#FFDA00',r2:'#C9B8EC',r3:'#F1ECFB',r4:'#E4C976',r5:'#49415C',badgeA:'#49415C',badgeB:'#766B8E',cov1:'#FFEF94',cov2:'#E8E1F7',cov3:'#F7F4FD'},
+'66':{name:'06 · Vàng – Olive – Be',sub:'Thanh lịch, dịu mắt',note:'Vàng #FFDA00 là điểm nhấn chính; phối cùng #8B9B62, #E7DDC9; nền #FAF7F0, chữ #384636.',dark:'#384636',dark2:'#525E50',feature:'#384636',cta:'#FFDA00',ctaText:'#171717',ctaD:'#FFDA00',ctaDText:'#171717',accent:'#FFE58A',label:'#384636',heading:'#384636',body:'#586456',line:'#E0E4D5',soft:'#FAF7F0',tint:'#F3EDE3',alt:'#E5E9DC',r1:'#FFDA00',r2:'#8B9B62',r3:'#E7DDC9',r4:'#C5BA31',r5:'#384636',badgeA:'#384636',badgeB:'#556445',cov1:'#FFEF94',cov2:'#CED5BD',cov3:'#F1EBDF'},
+'67':{name:'07 · Vàng – San hô – Mint',sub:'Tươi mới, sức sống',note:'Vàng #FFDA00 là điểm nhấn chính; phối cùng #FF937B, #BFE8D5; nền #F5FCF8, chữ #34584D.',dark:'#34584D',dark2:'#4E6E64',feature:'#34584D',cta:'#FFDA00',ctaText:'#171717',ctaD:'#FFDA00',ctaDText:'#171717',accent:'#FFE58A',label:'#34584D',heading:'#34584D',body:'#547369',line:'#FFE2DB',soft:'#F5FCF8',tint:'#DEF3E9',alt:'#FFE7E2',r1:'#FFDA00',r2:'#FF937B',r3:'#BFE8D5',r4:'#FFB63E',r5:'#34584D',badgeA:'#34584D',badgeB:'#7B6D5D',cov1:'#FFEF94',cov2:'#FFD2C8',cov3:'#D9F1E6'},
+'68':{name:'08 · Vàng – Nâu sữa – Vanilla',sub:'Thân thiện, đọc lâu',note:'Vàng #FFDA00 là điểm nhấn chính; phối cùng #C6A888, #FFF0CE; nền #FFFCF6, chữ #4C4036.',dark:'#4C4036',dark2:'#635950',feature:'#4C4036',cta:'#FFDA00',ctaText:'#171717',ctaD:'#FFDA00',ctaDText:'#171717',accent:'#FFE58A',label:'#4C4036',heading:'#4C4036',body:'#695F56',line:'#F0E8DF',soft:'#FFFCF6',tint:'#FFF7E6',alt:'#F2ECE5',r1:'#FFDA00',r2:'#C6A888',r3:'#FFF0CE',r4:'#E2C144',r5:'#4C4036',badgeA:'#4C4036',badgeB:'#776453',cov1:'#FFEF94',cov2:'#E7DACD',cov3:'#FFF6E2'},
+'69':{name:'09 · Vàng – Xanh ngọc – Hồng',sub:'Hiện đại, cân bằng',note:'Vàng #FFDA00 là điểm nhấn chính; phối cùng #65B9B1, #F7D8DF; nền #F6FBFA, chữ #2C5555.',dark:'#2C5555',dark2:'#476B6B',feature:'#2C5555',cta:'#FFDA00',ctaText:'#171717',ctaD:'#FFDA00',ctaDText:'#171717',accent:'#FFE58A',label:'#2C5555',heading:'#2C5555',body:'#4E7070',line:'#D5ECEA',soft:'#F6FBFA',tint:'#FBEBEE',alt:'#DDF0EE',r1:'#FFDA00',r2:'#65B9B1',r3:'#F7D8DF',r4:'#B2CA58',r5:'#2C5555',badgeA:'#2C5555',badgeB:'#407875',cov1:'#FFEF94',cov2:'#BEE2DE',cov3:'#FAE8EC'},
+'70':{name:'10 · Vàng – Xanh rừng – Ngà',sub:'Chuyên nghiệp, vững vàng',note:'Vàng #FFDA00 là điểm nhấn chính; phối cùng #376A4F, #A9C88D; nền #FFFDF5, chữ #263C32.',dark:'#263C32',dark2:'#42554D',feature:'#263C32',cta:'#FFDA00',ctaText:'#171717',ctaD:'#FFDA00',ctaDText:'#171717',accent:'#FFE58A',label:'#263C32',heading:'#263C32',body:'#495B53',line:'#C9D7CF',soft:'#FFFDF5',tint:'#D2E2C4',alt:'#D3DED8',r1:'#FFDA00',r2:'#376A4F',r3:'#A9C88D',r4:'#9BA228',r5:'#263C32',badgeA:'#263C32',badgeB:'#2C4C3C',cov1:'#FFEF94',cov2:'#ABC0B5',cov3:'#CBDEBB'}
+});
+var TENORDER=['62','63','64','65','66','67','68','69','70'];
 var ORDER=['30','31','20','4','5','8','9','10','13','16','17','33','34','35','36','37','38','39','40'];
 var NEWORDER=['41','42','43','44','45','46','47','48'];
 var cur='30',curL='a',page='home';
@@ -719,25 +761,48 @@ function lum(h){var c=[1,3,5].map(function(i){var v=parseInt(h.substr(i,2),16)/2
 function ratio(a,b){var x=lum(a),y=lum(b);if(x<y){var z=x;x=y;y=z}return (x+.05)/(y+.05)}
 function renderLogos(){
  var t=T[cur];
- document.getElementById('logos').innerHTML='<div class="logo-identity"><span class="ico"><svg viewBox="0 0 100 100" aria-hidden="true">'+logoIcon('a',t,false)+'</svg></span><div><strong>Sen hy vọng</strong><small>Một biểu tượng thống nhất · 27 cách phối màu</small></div></div>';
+ document.getElementById('logos').innerHTML='<div class="logo-identity"><span class="ico"><svg viewBox="0 0 100 100" aria-hidden="true">'+logoIcon('a',t,false)+'</svg></span><div><strong>Sen hy vọng</strong><small>Một biểu tượng thống nhất · 20 cách phối màu</small></div></div>';
  document.getElementById('lpv').innerHTML='<div class="pv l"><span class="lg">'+logoHTML(false)+'</span></div><div class="pv d" style="background:'+t.dark+'"><span class="lg">'+logoHTML(true)+'</span></div>';
 }
 function apply(id){
- cur=id;var t=T[id];site.classList.toggle('gold-gradient',id==='30'||id==='31');site.classList.toggle('gold-gradient-soft',id==='31');site.classList.toggle('tone-03',id==='20');
+ cur=id;var t=T[id];site.classList.toggle('new-ten',TENORDER.includes(id));site.classList.toggle('gold-gradient',id==='30'||id==='31');site.classList.toggle('gold-gradient-soft',id==='31');site.classList.toggle('tone-03',id==='20');
  for(var k in t){if(/^(name|sub|note|lA|lB|lDA|lDB)$/.test(k))continue;site.style.setProperty('--'+k,t[k])}
  document.querySelectorAll('.slot').forEach(function(el){el.innerHTML=logoHTML(el.dataset.dark==='1')});
  document.querySelectorAll('.bp').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.id===id)});
  renderLogos();
- var sw=[['dark','Nền đậm'],['cta','Nút chính'],['ctaD','Nút trên nền đậm'],['accent','Nhấn vàng'],['heading','Chữ tiêu đề'],['soft','Nền kem'],['tint','Nền nhạt'],['alt','Nền phụ']];
- document.getElementById('pal').innerHTML=sw.map(function(s){return '<span class="sw"><i style="background:'+t[s[0]]+'"></i><b>'+s[1]+'</b><span class="hex">'+t[s[0]]+'</span></span>'}).join('');
- document.getElementById('note').textContent=t.name+': '+t.note;
+ var sw=[['dark','Nền đậm'],['cta','Nút chính'],['ctaD','Nút trên nền đậm'],['accent','Màu nhấn'],['heading','Chữ tiêu đề'],['body','Chữ nội dung'],['soft','Nền sáng'],['tint','Nền nhạt'],['alt','Nền phụ'],['feature','Khối nổi bật'],['r1','Màu bổ trợ 1'],['r2','Màu bổ trợ 2'],['r3','Màu bổ trợ 3']];
+ function meaning(hex,role){
+  var h=hex.replace('#',''),r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);
+  var max=Math.max(r,g,b),min=Math.min(r,g,b),diff=max-min,bright=(r*299+g*587+b*114)/1000;
+  var emotion;
+  if(diff<16)emotion=bright>220?'Sạch sẽ, thoáng đãng, giúp nội dung dễ tiếp cận':bright<105?'Vững chãi, trang trọng, tạo độ tập trung':'Trung tính, cân bằng, giảm nhiễu thị giác';
+  else if(r>g*1.35&&r>b*1.3)emotion='Ấm áp, quan tâm, tạo cảm giác gần gũi';
+  else if(r>160&&g>100&&b<135)emotion=g>r*.8?'Tươi sáng, lạc quan, gợi hy vọng':'Năng lượng tích cực, khích lệ tinh thần';
+  else if(g>r*1.13&&g>b*.93)emotion='Thiên nhiên, phục hồi, cân bằng và bình yên';
+  else if(b>r*1.15&&b>g*.95)emotion='Tin cậy, điềm tĩnh, gợi cảm giác an toàn';
+  else if(r>135&&b>120&&g<r*.92)emotion='Dịu dàng, đồng cảm, nâng đỡ cảm xúc';
+  else if(r>130&&g>120&&b>100)emotion='Mềm mại, thư thái, giúp mắt nghỉ ngơi';
+  else emotion='Hài hòa, nhẹ nhàng, cân bằng cảm xúc';
+  var use=role==='dark'?'Dùng cho thanh đầu trang, footer và khối thông tin quan trọng.':role==='cta'||role==='ctaD'?'Dùng cho nút hành động và lời kêu gọi chính.':role==='heading'||role==='body'?'Dùng cho chữ để tạo phân cấp và hỗ trợ đọc lâu.':role==='soft'||role==='tint'||role==='alt'?'Dùng làm nền, tạo khoảng nghỉ thị giác giữa các phần.':role==='accent'?'Dùng để nhấn chi tiết cần chú ý, không lạm dụng.':role==='feature'?'Dùng cho chuyên mục nổi bật và thông tin cần nhấn mạnh.':'Dùng làm điểm nhấn ở minh họa, biểu đồ và thẻ nội dung.';
+  return emotion+'. '+use;
+ }
+ document.getElementById('pal').innerHTML=sw.filter(function(s){return !!t[s[0]]}).map(function(s){return '<div class="color-explain"><span class="sw"><i style="background:'+t[s[0]]+'"></i><b>'+s[1]+'</b><span class="hex">'+t[s[0]]+'</span></span><small>'+meaning(t[s[0]],s[0])+'</small></div>'}).join('');
+ document.getElementById('note').textContent='Ý nghĩa tổng thể: '+t.sub+'. Cách phối: '+t.note;
  document.getElementById('cr').textContent='Độ tương phản chữ nội dung trên nền kem: '+ratio(t.body,t.soft).toFixed(1)+' : 1 · tiêu đề trên nền trắng: '+ratio(t.heading,'#FFFFFF').toFixed(1)+' : 1 (chuẩn đọc dễ từ 4.5 : 1).';
 }
-function palBtn(id,keys){var t=T[id];return '<button class="bp" data-id="'+id+'" aria-pressed="false"><span class="dots">'+keys.map(function(k){return '<i style="background:'+t[k]+'"></i>'}).join('')+'</span>'+t.name+'<small>'+t.sub+'</small></button>'}
+function palBtn(id,keys,groupMeaning){var t=T[id];return '<button class="bp" data-id="'+id+'" aria-pressed="false"><span class="dots">'+keys.map(function(k){return '<i style="background:'+t[k]+'"></i>'}).join('')+'</span>'+t.name+'<small>'+t.sub+'</small>'+(groupMeaning?'<small class="group-meaning">Ý nghĩa: '+groupMeaning+'</small>':'')+'</button>'}
 var K5=['dark','feature','cta','accent','soft'];
-document.getElementById('palettes').innerHTML=ORDER.slice(3).map(function(id){return palBtn(id,K5)}).join('');
-document.getElementById('newPalettes').innerHTML=NEWORDER.map(function(id){return palBtn(id,K5)}).join('');
-document.getElementById('yellowPalettes').innerHTML=ORDER.slice(0,3).map(function(id){return palBtn(id,(id==='20'||id==='30'||id==='31')?['r1','r2','r3','r4','r5']:['r1','r2','r3','r4'])}).join('');
+var YELLOW=['30','31','20'];
+var GROUPS=[
+ {title:'Vàng kết hợp thiên nhiên',meaning:'Hy vọng, hồi phục và cân bằng; vàng tạo năng lượng, xanh lá làm dịu mắt.',ids:['66','70','38','41']},
+ {title:'Vàng kết hợp sắc ấm',meaning:'Sự quan tâm, gần gũi và đồng hành; phù hợp nội dung chia sẻ cảm xúc.',ids:['62','68','43']},
+ {title:'Hồng, sen và sắc dịu',meaning:'Đồng cảm, nhẹ nhàng, mang đến cảm giác được lắng nghe và nâng đỡ.',ids:['63','45','35']},
+ {title:'Xanh biển và san hô',meaning:'Tin cậy, an toàn và tích cực; thích hợp nội dung sức khỏe và tư vấn.',ids:['8','64','42','69']},
+ {title:'Lavender và sắc trung tính',meaning:'Thư thái, yên tĩnh và dễ đọc; phù hợp bài viết dài.',ids:['65','37','46']}
+];
+function palBtn(id,keys,groupMeaning){var t=T[id];return '<button class="bp" data-id="'+id+'" aria-pressed="false"><span class="dots">'+keys.map(function(k){return '<i style="background:'+t[k]+'"></i>'}).join('')+'</span>'+t.name+'<small>'+t.sub+'</small>'+(groupMeaning?'<small class="group-meaning">Ý nghĩa: '+groupMeaning+'</small>':'')+'</button>'}
+document.getElementById('yellowPalettes').innerHTML=YELLOW.map(function(id){return palBtn(id,['r1','r2','r3','r4','r5'])}).join('');
+document.getElementById('groupedPalettes').innerHTML=GROUPS.map(function(g){return '<section class="tone-group"><h3>'+g.title+'</h3><p>'+g.meaning+'</p><div class="tone-buttons">'+g.ids.map(function(id){return palBtn(id,K5,g.meaning)}).join('')+'</div></section>'}).join('');
 document.getElementById('demo').addEventListener('click',function(e){var b=e.target.closest('.bp');if(b)apply(b.dataset.id)});
 
 /* ===== chuyển trang ===== */
